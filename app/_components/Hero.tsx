@@ -3,11 +3,12 @@ import { GridPattern } from "@/components/magicui/grid-pattern";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ArrowRightIcon } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen relative mx-auto px-4 pt-12 sm:pt-12 md:pt-32 text-center border-b">
+    <section className="min-h-screen relative mx-auto px-4 pt-12 sm:pt-12 md:pt-32 text-center">
       {/* Background Grid Pattern */}
       <GridPattern
         width={80}
@@ -21,7 +22,7 @@ const Hero = () => {
       />
 
       {/* Animated Shiny Text */}
-      <div className=" flex items-center justify-center">
+      <div className="flex items-center justify-center">
         <div
           className={cn(
             "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800"
@@ -32,12 +33,16 @@ const Hero = () => {
           </AnimatedShinyText>
         </div>
       </div>
+
       {/* Main Headline */}
-      <h1 className="text-6xl font-bold mt-4">Wujudkan Website Impian Anda!</h1>
+      <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mt-4">
+        Wujudkan Website Impian Anda!
+      </h1>
 
       {/* Subheading */}
-      <p className="mt-6 text-xl max-w-2xl mx-auto text-muted-foreground">
-      Wujudkan website profesional untuk berbagai kebutuhan dengan desain tampilan, fitur dan teknologi website yang paling up-to-date! 🚀
+      <p className="mt-6 text-lg sm:text-xl max-w-2xl mx-auto text-muted-foreground">
+        Wujudkan website profesional untuk berbagai kebutuhan dengan desain
+        tampilan, fitur dan teknologi website yang paling up-to-date! 🚀
       </p>
 
       {/* Call to Action Button */}
@@ -53,8 +58,17 @@ const Hero = () => {
             <ArrowRightIcon className="ml-2 size-4" />
           </Link>
         </Button>
-      </div>
+        <div className="mt-4">
 
+            <Image
+              src="/next.svg"
+              alt="Hero Image"
+              width={1200}
+              height={800}
+              layout="responsive"
+            />
+        </div>
+      </div>
     </section>
   );
 };
