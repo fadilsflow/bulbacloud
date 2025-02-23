@@ -39,9 +39,14 @@ const Hero = () => {
 
       {/* Subheading */}
       <p className="mt-6 text-lg sm:text-xl max-w-2xl mx-auto text-muted-foreground">
-        Layanan Website Development Terjangkau untuk Pertumbuhan Bisnis Anda.
-        Wujudkan website profesional untuk berbagai kebutuhan dengan desain
-        tampilan, fitur dan teknologi website yang paling up-to-date! 🚀
+        Layanan Website Development{" "}
+        <span className="text-foreground">
+          Terjangkau untuk Pertumbuhan Bisnis Anda.{" "}
+        </span>{" "}
+        Wujudkan website profesional untuk berbagai kebutuhan dengan desain{" "}
+        <span className="text-foreground">
+          tampilan, fitur dan teknologi website yang paling up-to-date! 🚀
+        </span>
       </p>
 
       {/* Call to Action Button */}
