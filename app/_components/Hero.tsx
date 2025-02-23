@@ -30,10 +30,10 @@ const Hero = () => {
       </div>
 
       {/* Main Headline */}
-      <h1 className="text-4xl  sm:text-5xl md:text-6xl font-bold mt-4">
+      <h1 className="text-4xl  sm:text-5xl md:text-6xl font-semibold mt-4">
         Wujudkan Website
       </h1>
-      <h1 className="text-4xl  sm:text-5xl md:text-6xl font-bold mt-4">
+      <h1 className="text-4xl  sm:text-5xl md:text-6xl font-semibold mt-4">
         Impian Anda!
       </h1>
 

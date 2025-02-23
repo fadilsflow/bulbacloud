@@ -8,6 +8,8 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import Link from "next/link";
+import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
 
 const TechnologiesWeUse = () => {
   const technologies = [
@@ -30,7 +32,7 @@ const TechnologiesWeUse = () => {
   ];
 
   return (
-    <div >
+    <div>
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap justify-center items-center gap-8">
           <TooltipProvider>
@@ -49,7 +51,7 @@ const TechnologiesWeUse = () => {
                         alt={`${tech.name} logo`}
                         width={20}
                         height={20}
-                        className="filter brightness-0 invert opacity-75 hover:opacity-100 transition-all duration-300 hover:scale-110"
+                        className=" invert opacity-75 hover:opacity-100 transition-all duration-300 hover:scale-110"
                       />
                     </div>
                   </Link>
@@ -61,8 +63,15 @@ const TechnologiesWeUse = () => {
             ))}
           </TooltipProvider>
         </div>
-        <div className="text-sm text-center text-muted-foreground mt-4">
-          <p></p>Crafted with Cutting-Edge Tools
+
+        <div className="flex items-center justify-center mt-4">
+          <div
+            className={cn(
+              "rounded-full border border-neutral-200 bg-white px-2 py-1 text-xs font-medium text-neutral-800 shadow-sm transition-all duration-300 ease-in-out hover:shadow-md dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100"
+            )}
+          >
+            <span>Crafted with Cutting-Edge Tools</span>
+          </div>
         </div>
       </div>
     </div>

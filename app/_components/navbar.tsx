@@ -105,12 +105,6 @@ const menuItems = [
         icon: <Settings className="h-4 w-4" />,
         description: "Layanan perawatan untuk menjaga website tetap optimal.",
       },
-      {
-        label: "Custom Development",
-        href: "/custom-development",
-        icon: <Terminal className="h-4 w-4" />,
-        description: "Pengembangan fitur khusus sesuai kebutuhan Anda.",
-      },
     ],
   },
   {
@@ -379,8 +373,8 @@ export function Navbar() {
   return (
     <nav
       className={cn(
-        "sticky top-0 bg-background/80 backdrop-blur-lg z-50 transition-all",
-        isScrolled ? "border-b border-slate-6 dark:border-neutral-800" : ""
+        "sticky top-0 bg-inherit z-50 transition-all",
+        isScrolled ? " border-slate-6 dark:border-neutral-800" : ""
       )}
     >
       <div className="mx-auto px-6 lg:px-10">

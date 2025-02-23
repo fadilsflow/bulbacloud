@@ -18,7 +18,6 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"; // Sesuaikan path dengan struktur proyek Anda
 
-import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -36,7 +35,6 @@ const services = [
     name: "Maintenance & Support",
     href: "/maintenance-support",
   },
-  { icon: Terminal, name: "Custom Development", href: "/custom-development" },
 ];
 
 export default function ServicesHeader() {
@@ -69,45 +67,47 @@ export default function ServicesHeader() {
       </h1>
 
       {/* Deskripsi */}
-      <p className="text-muted-foreground">
+      <p className="text-muted-foreground mb-8">
         Layanan Website Development Terjangkau untuk Pertumbuhan Bisnis Anda.
       </p>
-      <Separator className="my-8" />
 
       {/* Daftar Layanan */}
-      <div className="md:grid-cols-3 lg:grid-cols-4 gap-6 hidden md:flex">
-        {services.map((service, index) => {
-          const Icon = service.icon;
-          const isActive = pathname === service.href;
-          return (
-            <Link key={index} href={service.href}>
-              <div className="flex flex-col items-center text-center p-4">
-                <div
-                  className={`flex items-center justify-center w-16 h-16 border ${
-                    isActive ? "bg-foreground" : "bg-muted"
-                  } rounded-full mb-4`}
-                >
-                  <Icon
-                    className={`h-8 w-8 ${
-                      isActive ? "text-background" : "text-white-500"
-                    }`}
-                  />
+      <div className="container mx-auto px-4">
+        <div className="hidden md:flex flex-row justify-center items-center gap-2 lg:gap-8 border-b pb-8">
+          {services.map((service, index) => {
+            const Icon = service.icon;
+            const isActive = pathname === service.href;
+            return (
+              <Link key={index} href={service.href} className="flex-1 min-w-0">
+                <div className="flex flex-col items-center justify-center text-center p-2 md:p-4 space-y-2 md:space-y-4 hover:scale-105 transition-transform duration-200">
+                  <div
+                    className={`flex items-center justify-center w-12 h-12 md:w-16 md:h-16 border ${
+                      isActive ? "bg-foreground" : "bg-muted"
+                    } rounded-full`}
+                  >
+                    <Icon
+                      className={`h-6 w-6 md:h-8 md:w-8 ${
+                        isActive ? "text-background" : "text-white-500"
+                      }`}
+                    />
+                  </div>
+                  <p
+                    className={`text-xs md:text-sm ${
+                      isActive
+                        ? "text-primary font-semibold"
+                        : "text-foreground"
+                    } text-center whitespace-pre-line`}
+                  >
+                    {service.name}
+                  </p>
                 </div>
-                <p
-                  className={`text-sm ${
-                    isActive ? "text-primary font-semibold" : "text-foreground"
-                  } text-center break-words`}
-                >
-                  {service.name.replace(" ", "\n")}{" "}
-                  {/* Memisahkan teks dengan newline */}
-                </p>
-              </div>
-            </Link>
-          );
-        })}
+              </Link>
+            );
+          })}
+        </div>
       </div>
-
-      <Separator className="my-8 hidden" />
     </div>
   );
 }
+
+
