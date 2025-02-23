@@ -1,12 +1,11 @@
 import Hero from "./_components/Hero";
-import TechnologiesWeUse from "./_components/stack";
-
+import MaintenancePage from "./_components/maintenance";
 
 export default function Home() {
   return (
-    <>
+    <div>
       <Hero />
-      <TechnologiesWeUse/>
-    </>
+      <MaintenancePage/>
+    </div>
   );
 }

@@ -1,14 +1,13 @@
-import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text";
 import { GridPattern } from "@/components/magicui/grid-pattern";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ArrowRightIcon } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
+import TechnologiesWeUse from "./stack";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen relative mx-auto px-4 pt-12 sm:pt-12 md:pt-32 text-center">
+    <section className="min-h-screen relative mx-auto px-4 pt-12 sm:pt-12 md:pt-12 text-center">
       {/* Background Grid Pattern */}
       <GridPattern
         width={80}
@@ -20,27 +19,27 @@ const Hero = () => {
           "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
         )}
       />
-
-      {/* Animated Shiny Text */}
       <div className="flex items-center justify-center">
         <div
           className={cn(
-            "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800"
+            "rounded-full border border-neutral-200 bg-white px-2 py-1 text-xs font-medium text-neutral-800 shadow-sm transition-all duration-300 ease-in-out hover:shadow-md dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100"
           )}
         >
-          <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-            <span>✨ Solusi Website Terbaik</span>
-          </AnimatedShinyText>
+          <span>🚀 Solusi Website Terbaik</span>
         </div>
       </div>
 
       {/* Main Headline */}
-      <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mt-4">
-        Wujudkan Website Impian Anda!
+      <h1 className="text-4xl  sm:text-5xl md:text-6xl font-bold mt-4">
+        Wujudkan Website
+      </h1>
+      <h1 className="text-4xl  sm:text-5xl md:text-6xl font-bold mt-4">
+        Impian Anda!
       </h1>
 
       {/* Subheading */}
       <p className="mt-6 text-lg sm:text-xl max-w-2xl mx-auto text-muted-foreground">
+        Layanan Website Development Terjangkau untuk Pertumbuhan Bisnis Anda.
         Wujudkan website profesional untuk berbagai kebutuhan dengan desain
         tampilan, fitur dan teknologi website yang paling up-to-date! 🚀
       </p>
@@ -53,20 +52,16 @@ const Hero = () => {
           className="inline-flex items-center gap-2 rounded-full"
           asChild
         >
-          <Link href="/konsultasi" className="inline-flex items-center gap-2">
+          <Link
+            href="/konsultasi"
+            className="inline-flex items-center gap-2 mb-5"
+          >
             Mulai Proyek Anda Sekarang!
             <ArrowRightIcon className="ml-2 size-4" />
           </Link>
         </Button>
         <div className="mt-4">
-
-            <Image
-              src="/next.svg"
-              alt="Hero Image"
-              width={1200}
-              height={800}
-              layout="responsive"
-            />
+          <TechnologiesWeUse />
         </div>
       </div>
     </section>

@@ -1,66 +1,71 @@
 "use client";
-import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+
+import Image from "next/image";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import Link from "next/link";
 
 const TechnologiesWeUse = () => {
   const technologies = [
-    "Resend",
-    "React",
-    "Next.js",
-    "Tailwind",
-    "PostgreSQL",
-    "Figma",
-    "Prisma",
-    "Supabase",
+    { name: "Next.js", logo: "/logos/nextjs.svg", url: "https://nextjs.org" },
+    {
+      name: "Tailwind CSS",
+      logo: "/logos/tailwindcss.svg",
+      url: "https://tailwindcss.com",
+    },
+    {
+      name: "PostgreSQL",
+      logo: "/logos/postgresql.svg",
+      url: "https://www.postgresql.org",
+    },
+    {
+      name: "shadcn/ui",
+      logo: "/logos/shadcnui.svg",
+      url: "https://ui.shadcn.com",
+    },
   ];
 
   return (
-    <section className="py-0 overflow-hidden    ">
+    <div >
       <div className="container mx-auto px-4">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl font-bold text-center mb-12"
-        >
-          Teknologi yang Kami Gunakan
-        </motion.h2>
-
-        <div className="relative">
-          <div className="flex overflow-x-hidden">
-            <motion.div
-              className="flex whitespace-nowrap"
-              animate={{
-                x: [0, -1035],
-                transition: {
-                  x: {
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    duration: 20,
-                    ease: "linear",
-                  },
-                },
-              }}
-            >
-              {[...technologies, ...technologies].map((tech, index) => (
-                <div
-                  key={index}
-                  className={cn(
-                    "text-4xl font-bold mx-8",
-                    "bg-clip-text text-transparent bg-gradient-to-r",
-                    index % 2 === 0
-                      ? "from-primary to-purple-600"
-                      : "from-purple-600 to-primary"
-                  )}
-                >
-                  {tech}
-                </div>
-              ))}
-            </motion.div>
-          </div>
+        <div className="flex flex-wrap justify-center items-center gap-8">
+          <TooltipProvider>
+            {technologies.map((tech) => (
+              <Tooltip key={tech.name}>
+                <TooltipTrigger asChild>
+                  <Link
+                    href={tech.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center"
+                  >
+                    <div className="relative">
+                      <Image
+                        src={tech.logo}
+                        alt={`${tech.name} logo`}
+                        width={20}
+                        height={20}
+                        className="filter brightness-0 invert opacity-75 hover:opacity-100 transition-all duration-300 hover:scale-110"
+                      />
+                    </div>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{tech.name}</p>
+                </TooltipContent>
+              </Tooltip>
+            ))}
+          </TooltipProvider>
+        </div>
+        <div className="text-sm text-center text-muted-foreground mt-4">
+          <p></p>Crafted with Cutting-Edge Tools
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
