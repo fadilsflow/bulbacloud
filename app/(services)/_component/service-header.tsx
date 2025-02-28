@@ -8,7 +8,6 @@ import {
   RefreshCw,
   Search,
   Settings,
-  Terminal,
 } from "lucide-react";
 import {
   Breadcrumb,
@@ -47,7 +46,9 @@ export default function ServicesHeader() {
         <Breadcrumb className="mb-4">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="/">Home</BreadcrumbLink>
+              <Link href="/" className="hover:text-blue-500">
+                Home
+              </Link>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
@@ -109,5 +110,3 @@ export default function ServicesHeader() {
     </div>
   );
 }
-
-
