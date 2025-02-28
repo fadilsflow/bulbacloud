@@ -61,7 +61,7 @@ const Hero = () => {
             href="/konsultasi"
             className="inline-flex items-center gap-2 mb-5"
           >
-            Mulai Proyek Anda Sekarang!
+            Buat Website Anda Sekarang!
             <ArrowRightIcon className="ml-2 size-4" />
           </Link>
         </Button>

@@ -32,15 +32,14 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
           <Navbar />
           <main>{children}</main>
-          <Footer/>
+          <Footer />
           <Toaster />
-          
         </ThemeProvider>
       </body>
     </html>

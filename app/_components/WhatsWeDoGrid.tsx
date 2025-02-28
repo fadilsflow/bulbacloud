@@ -2,10 +2,9 @@
 
 import Link from "next/link";
 import { Code, ShoppingCart, Building, Images, Landmark } from "lucide-react";
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useTheme } from "next-themes";
-import { MagicCard } from "@/components/magicui/magic-card";
+import { BorderBeam } from "@/components/magicui/border-beam";
+import { motion } from "framer-motion"; // Import animasi dari Framer Motion
 
 const features = [
   {
@@ -39,7 +38,6 @@ const features = [
     href: "/portfolio-website",
     Icon: Images,
     className: "col-span-1", // Selalu 1 kolom
-    background: "/batman",
   },
   {
     name: "Landing Page",
@@ -60,17 +58,6 @@ const features = [
 ];
 
 export function WhatsWeDoGrid() {
-  const { theme } = useTheme();
-
-  // Tentukan warna gradient berdasarkan tema
-  const getGradientColor = () => {
-    if (theme === "dark") {
-      return "#262626"; // Warna untuk dark mode
-    } else {
-      return "#D9D9D955"; // Warna untuk light mode (dengan transparansi)
-    }
-  };
-
   return (
     <div className="container mx-auto py-12">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -80,23 +67,38 @@ export function WhatsWeDoGrid() {
             href={feature.href}
             className="block transition-all duration-200 h-full"
           >
-            <Card className="h-full border border-border hover:border-primary/50 hover:shadow-sm transition-all duration-200 cursor-pointer group">
-              <MagicCard gradientColor={getGradientColor()}>
+            {/* Animasi Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <Card className="relative overflow-hidden cursor-pointer group border bg-gradient-to-b from-background to-muted/50 border-accent hover:border-primary/30 transition-all duration-300 shadow-sm">
+                {/* Border Beam Effect */}
+                <BorderBeam
+                  size={250}
+                  duration={12}
+                  delay={9}
+                  colorFrom="var(--primary)"
+                  colorTo="var(--primary)"
+                />
+
+                {/* Card Content */}
                 <CardHeader className="flex flex-row items-center gap-4 pb-2">
-                  <div className="p-2 rounded-md bg-primary/5 text-primary">
-                    <feature.Icon className="h-5 w-5" />
+                  <div className="p-2 rounded-md bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
+                    <feature.Icon className="h-5 w-5 group-hover:scale-110 transition-transform" />
                   </div>
                   <CardTitle className="text-lg font-medium">
                     {feature.name}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-left text-muted-foreground">
                     {feature.description}
                   </p>
                 </CardContent>
-              </MagicCard>
-            </Card>
+              </Card>
+            </motion.div>
           </Link>
         ))}
       </div>

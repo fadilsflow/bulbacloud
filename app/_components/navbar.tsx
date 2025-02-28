@@ -381,7 +381,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Image
-            src="/vercel.svg"
+            src="/webtron.svg"
             alt="Webtron Logo"
             width={20}
             height={20}
