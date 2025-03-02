@@ -17,7 +17,7 @@ import {
   Layout,
   Settings,
   Rocket,
-  BookOpen,
+  //BookOpen,
   Users,
   HelpCircle,
   ArrowRight,
@@ -50,60 +50,15 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const menuItems = [
-  {
+const menuItems = [ {
     label: "Services",
     href: "/",
     submenu: [
       {
-        label: "Custom Websites",
-        href: "/custom-websites",
+        label: "jasa pembuatan Websites",
+        href: "/websites",
         icon: <Code className="h-4 w-4" />,
         description: "Buat website sesuai kebutuhan bisnis Anda.",
-      },
-      {
-        label: "E-commerce",
-        href: "/ecommerce",
-        icon: <ShoppingCart className="h-4 w-4" />,
-        description: "Toko online dengan fitur lengkap untuk penjualan.",
-      },
-      {
-        label: "Company Profile",
-        href: "/company-profile",
-        icon: <Briefcase className="h-4 w-4" />,
-        description:
-          "Website profesional untuk memperkenalkan perusahaan Anda.",
-      },
-      {
-        label: "Portfolio Website",
-        href: "/portfolio-website",
-        icon: <ImageIcon className="h-4 w-4" />,
-        description:
-          "Tampilkan karya atau proyek Anda dengan website portofolio.",
-      },
-      {
-        label: "Landing Page",
-        href: "/landing-page",
-        icon: <Layout className="h-4 w-4" />,
-        description: "Halaman khusus untuk promosi produk atau layanan.",
-      },
-      {
-        label: "Website Redesign",
-        href: "/redesign",
-        icon: <RefreshCw className="h-4 w-4" />,
-        description: "Perbarui tampilan dan kinerja website lama Anda.",
-      },
-      {
-        label: "SEO Optimization",
-        href: "/seo-optimization",
-        icon: <Search className="h-4 w-4" />,
-        description: "Tingkatkan visibilitas website di mesin pencari.",
-      },
-      {
-        label: "Maintenance & Support",
-        href: "/maintenance",
-        icon: <Settings className="h-4 w-4" />,
-        description: "Layanan perawatan untuk menjaga website tetap optimal.",
       },
     ],
   },
@@ -147,12 +102,12 @@ const menuItems = [
     label: "Resources",
     href: "/resources",
     submenu: [
-      {
-        label: "Blog",
-        href: "/blog",
-        icon: <BookOpen className="h-4 w-4" />,
-        description: "Artikel terbaru seputar bisnis dan teknologi.",
-      },
+      //{
+      //  label: "Blog",
+      //  href: "/blog",
+      //  icon: <BookOpen className="h-4 w-4" />,
+      //  description: "Artikel terbaru seputar bisnis dan teknologi.",
+      //},
       {
         label: "Guides",
         href: "/guides",

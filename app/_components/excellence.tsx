@@ -29,7 +29,7 @@ export default function Excellence() {
       </motion.p>
 
       {/* Grid untuk Menampilkan Keunggulan */}
-      <div className="w-full max-w-6xl">
+      <div className="text-left w-full max-w-6xl">
         <ExcellenceGrid />
       </div>
 

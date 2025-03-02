@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Code, ShoppingCart, Building, Images, Landmark } from "lucide-react";
+import { Code, ShoppingCart, Building, Images, Landmark, RefreshCw } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import { motion } from "framer-motion"; // Import animasi dari Framer Motion
@@ -52,7 +52,7 @@ const features = [
     description:
       "Perbarui tampilan dan fungsionalitas website lama Anda agar lebih modern dan efisien.",
     href: "/website-redesign",
-    Icon: Landmark,
+    Icon: RefreshCw,
     className: "col-span-1", // Selalu 1 kolom
   },
 ];
