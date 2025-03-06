@@ -1,3 +1,4 @@
+
 import { GridPattern } from "@/components/magicui/grid-pattern";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -5,7 +6,7 @@ import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
 import TechnologiesWeUse from "./stack";
 
-const Hero = () => {
+const HeroWeb = () => {
   return (
     <section className="min-h-screen relative mx-auto px-4 pt-12 sm:pt-12 md:pt-12 text-center">
       {/* Background Grid Pattern */}
@@ -22,53 +23,55 @@ const Hero = () => {
       <div className="flex items-center justify-center">
         <div
           className={cn(
-            "rounded-full border border-neutral-200 bg-white px-3 py-1 text-sm font-medium text-neutral-800 shadow-sm transition-all duration-300 ease-in-out hover:shadow-md dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100"
+            "rounded-full border border-neutral-200 bg-white px-2 py-1 text-xs font-medium text-neutral-800 shadow-sm transition-all duration-300 ease-in-out hover:shadow-md dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100"
           )}
         >
-          <span>🚀 Bangun Website & Infrastruktur Digital Anda</span>
+          <span>🚀 Solusi Website Terbaik</span>
         </div>
       </div>
 
-{/* Main Headline */}
+      {/* Main Headline */}
       <h1 className="text-4xl  sm:text-5xl md:text-6xl font-semibold mt-4">
- Simple & Reliable 
+        Wujudkan Website
       </h1>
       <h1 className="text-4xl  sm:text-5xl md:text-6xl font-semibold mt-4">
-Digital Solutions
+        Impian Anda!
       </h1>
 
       {/* Subheading */}
       <p className="mt-6 text-lg sm:text-xl max-w-2xl mx-auto text-muted-foreground">
-        Solusi website, hosting, dan cloud <span className="text-foreground">terjangkau</span> untuk bisnis dan individu.  
-        Buat website cepat, aman, dan modern dengan teknologi <span className="text-foreground">terbaik</span>. 🚀  
+        Layanan Website Development{" "}
+        <span className="text-foreground">
+          Terjangkau untuk Pertumbuhan Bisnis Anda.{" "}
+        </span>{" "}
+        Wujudkan website profesional untuk berbagai kebutuhan dengan desain{" "}
+        <span className="text-foreground">
+          tampilan, fitur dan teknologi website yang paling up-to-date! 🚀
+        </span>
       </p>
 
-      {/* Call to Action Buttons */}
-      <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+      {/* Call to Action Button */}
+      <div className="mt-8">
         <Button
           variant="default"
           size="lg"
           className="inline-flex items-center gap-2 rounded-full"
           asChild
         >
-          <Link href="/konsultasi">
-Order via WhatsApp
+          <Link
+            href="/konsultasi"
+            className="inline-flex items-center gap-2 mb-5"
+          >
+            Buat Website Anda Sekarang!
+            <ArrowRightIcon className="ml-2 size-4" />
           </Link>
         </Button>
-
-        <Button
-          variant="outline"
-          size="lg"
-          className="inline-flex items-center gap-2 rounded-full"
-          asChild
-        >
-          <Link href="/layanan">
-Order via Discord
-          </Link>
-        </Button>
+        <div className="mt-4">
+          <TechnologiesWeUse />
+        </div>
       </div>
     </section>
   );
 };
 
-export default Hero;
+export default HeroWeb;

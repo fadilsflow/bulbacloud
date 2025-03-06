@@ -343,7 +343,7 @@ export function Navbar() {
             className="flex-shrink-0 mr-2"
           />
           <Link href="/" className="flex-shrink-0 flex items-center gap-2">
-            <h1 className="text-2xl font-bold text-primary ">Webtron</h1>
+            <h1 className="text-2xl font-bold text-primary ">Bulba</h1>
           </Link>
 
           {/* Desktop Menu */}
@@ -354,19 +354,6 @@ export function Navbar() {
           {/* CTA and Mobile Menu */}
           <div className="flex-shrink-0 flex items-center gap-4">
             <Button
-              variant="ghost"
-              className="hidden md:flex items-center gap-2 rounded-full"
-              asChild
-            >
-              <Link
-                href="https://wa.me/6285157739978?text=Bang%20mau%20order"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Sign in
-              </Link>
-            </Button>
-            <Button
               variant="default"
               className="hidden md:flex items-center gap-2 rounded-full"
               asChild
@@ -376,7 +363,7 @@ export function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Get Started
+                Whatsapp
               </Link>
             </Button>
 
