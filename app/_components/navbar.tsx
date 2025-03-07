@@ -8,29 +8,40 @@ import {
   SheetContent,
   SheetTrigger,
   SheetClose,
+  SheetHeader,
+  SheetTitle,
 } from "@/components/ui/sheet";
 import {
   Menu,
-  Search,
-  Code,
+  Store,
   ShoppingCart,
-  Layout,
   Settings,
-  Rocket,
-  //BookOpen,
   Users,
   HelpCircle,
   ArrowRight,
-  Image as ImageIcon,
   Star,
   MessageSquare,
   MessageCircle,
-  Terminal,
   Briefcase,
-  RefreshCw,
+  Server,
+  Boxes,
+  Globe,
+  Database,
+  Gamepad,
+  BookOpen,
+  Cloud,
+  Cpu,
+  SendIcon,
+  InfoIcon,
+  Target,
+  Phone,
+  Headphones,
+  Handshake,
+  FileText,
+  X,
+  ChevronRight,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { DialogTitle } from "@radix-ui/react-dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -49,104 +60,296 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { DialogTitle } from "@radix-ui/react-dialog";
 
-const menuItems = [ {
-    label: "Services",
-    href: "/",
+// Type definitions
+interface SubMenuItem {
+  label: string;
+  href: string;
+  icon: React.ReactNode;
+  description: string;
+  children?: SubMenuItem[];
+}
+
+interface MenuItem {
+  label: string;
+  href: string;
+  submenu: SubMenuItem[];
+}
+
+// Menu data
+const menuItems: MenuItem[] = [
+  {
+    label: "Website",
+    href: "/websites",
     submenu: [
       {
-        label: "jasa pembuatan Websites",
-        href: "/websites",
-        icon: <Code className="h-4 w-4" />,
-        description: "Buat website sesuai kebutuhan bisnis Anda.",
+        label: "Paket Hemat UMKM",
+        href: "/websites/paket-hemat",
+        icon: <Store className="h-4 w-4" />,
+        description: "Pilihan terbaik untuk UMKM dan Yayasan yang baru Go-Digital.",
+      },
+      {
+        label: "Paket Bisnis",
+        href: "/websites/paket-bisnis",
+        icon: <Briefcase className="h-4 w-4" />,
+        description: "Website profesional untuk bisnis, portal berita, sekolah, dan portofolio.",
+      },
+      {
+        label: "Paket Toko Online",
+        href: "/websites/paket-toko-online",
+        icon: <ShoppingCart className="h-4 w-4" />,
+        description: "Website e-commerce dengan fitur checkout yang fleksibel.",
+      },
+      {
+        label: "Paket Custom Fitur Website",
+        href: "/websites/paket-custom",
+        icon: <Settings className="h-4 w-4" />,
+        description: "Solusi kustom untuk bisnis dengan fitur spesifik.",
       },
     ],
   },
   {
-    label: "Portfolio",
-    href: "/portfolio",
+    label: "Hosting",
+    href: "/hosting",
     submenu: [
       {
-        label: "Our Work",
-        href: "/work",
-        icon: <Rocket className="h-4 w-4" />,
-        description: "Lihat proyek-proyek terbaik yang telah kami selesaikan.",
+        label: "Minecraft Hosting",
+        href: "/hosting/minecraft",
+        icon: <Gamepad className="h-4 w-4" />,
+        description: "Server Minecraft dengan performa tinggi dan harga terjangkau.",
       },
       {
-        label: "Client Stories",
-        href: "/stories",
+        label: "Docker Hosting",
+        href: "/hosting/docker",
+        icon: <Boxes className="h-4 w-4" />,
+        description: "Deploy aplikasi berbasis Docker dengan cepat dan stabil.",
+      },
+      {
+        label: "Database Hosting",
+        href: "/hosting/database",
+        icon: <Database className="h-4 w-4" />,
+        description: "Hosting database dengan performa tinggi (MySQL, PostgreSQL, MongoDB).",
+      },
+      {
+        label: "Cloud Hosting",
+        href: "/hosting/cloud",
+        icon: <Cloud className="h-4 w-4" />,
+        description: "Hosting fleksibel dan scalable berbasis cloud.",
+      },
+    ],
+  },
+  {
+    label: "VPS",
+    href: "/vps",
+    submenu: [
+      {
+        label: "VPS Digital Ocean",
+        href: "/vps/digital-ocean",
+        icon: <Server className="h-4 w-4" />,
+        description: "VPS berbasis cloud dengan performa tinggi dari Digital Ocean.",
+      },
+      {
+        label: "VPS Dedicated Indonesia",
+        href: "/vps/kvm",
+        icon: <Cpu className="h-4 w-4" />,
+        description: "VPS berbasis KVM di Indonesia dengan sumber daya penuh dan stabilitas terbaik.",
+      },
+    ],
+  },
+  {
+    label: "Domain",
+    href: "/domain",
+    submenu: [
+      {
+        label: "Domain + Cloudflare & Google Account",
+        href: "/domain",
+        icon: <Globe className="h-4 w-4" />,
+        description: "Domain siap pakai, sudah di Cloudflare & dilengkapi akun Google baru.",
+      },
+    ],
+  },
+  {
+    label: "Informasi",
+    href: "/informasi",
+    submenu: [
+      {
+        label: "Komunitas",
+        href: "/informasi/community",
         icon: <Users className="h-4 w-4" />,
-        description: "Cerita sukses dari klien kami.",
-      },
-    ],
-  },
-  {
-    label: "Community",
-    href: "/community",
-    submenu: [
-      {
-        label: "WhatsApp Group",
-        href: "/whatsapp",
-        icon: <MessageCircle className="h-4 w-4" />,
-        description: "Bergabung dengan grup WhatsApp kami.",
-      },
-      {
-        label: "Discord",
-        href: "/discord",
-        icon: <MessageSquare className="h-4 w-4" />,
-        description: "Komunitas diskusi untuk pengembang dan bisnis.",
-      },
-    ],
-  },
-  {
-    label: "Resources",
-    href: "/resources",
-    submenu: [
-      //{
-      //  label: "Blog",
-      //  href: "/blog",
-      //  icon: <BookOpen className="h-4 w-4" />,
-      //  description: "Artikel terbaru seputar bisnis dan teknologi.",
-      //},
-      {
-        label: "Guides",
-        href: "/guides",
-        icon: <HelpCircle className="h-4 w-4" />,
-        description: "Panduan praktis untuk mengelola website.",
-      },
-    ],
-  },
-  {
-    label: "About",
-    href: "/about",
-    submenu: [
-      {
-        label: "Our Team",
-        href: "/about/team",
-        icon: <Users className="h-4 w-4" />,
-        description: "Kenali tim profesional kami.",
+        description: "Bergabung dengan komunitas dan diskusi online.",
+        children: [
+          {
+            label: "WhatsApp Group",
+            href: "/informasi/community/whatsapp",
+            icon: <MessageCircle className="h-4 w-4" />,
+            description: "Gabung dengan komunitas di WhatsApp.",
+          },
+          {
+            label: "Discord",
+            href: "/informasi/community/discord",
+            icon: <MessageSquare className="h-4 w-4" />,
+            description: "Komunitas untuk diskusi bisnis & teknologi.",
+          },
+          {
+            label: "Telegram Channel",
+            href: "/informasi/community/telegram",
+            icon: <SendIcon className="h-4 w-4" />,
+            description: "Dapatkan update terbaru melalui Telegram.",
+          },
+        ],
       },
       {
-        label: "Why Us?",
-        href: "/about/why-choose-us",
+        label: "Sumber Daya",
+        href: "/informasi/resources",
+        icon: <BookOpen className="h-4 w-4" />,
+        description: "Baca artikel dan panduan terbaru.",
+        children: [
+          {
+            label: "Blog",
+            href: "/informasi/resources/blog",
+            icon: <FileText className="h-4 w-4" />,
+            description: "Artikel terbaru tentang bisnis & teknologi.",
+          },
+          {
+            label: "Guides",
+            href: "/informasi/resources/guides",
+            icon: <HelpCircle className="h-4 w-4" />,
+            description: "Panduan lengkap untuk layanan kami.",
+          },
+          {
+            label: "FAQ",
+            href: "/informasi/resources/faq",
+            icon: <InfoIcon className="h-4 w-4" />,
+            description: "Jawaban atas pertanyaan umum.",
+          },
+        ],
+      },
+      {
+        label: "Tentang Kami",
+        href: "/informasi/about",
         icon: <Star className="h-4 w-4" />,
-        description: "Alasan memilih layanan kami.",
+        description: "Kenali lebih jauh tentang startup kami.",
+        children: [
+          {
+            label: "Visi & Misi",
+            href: "/informasi/about/vision-mission",
+            icon: <Target className="h-4 w-4" />,
+            description: "Tujuan dan nilai utama yang kami pegang.",
+          },
+          {
+            label: "Tim Kami",
+            href: "/informasi/about/team",
+            icon: <Users className="h-4 w-4" />,
+            description: "Kenali orang-orang di balik startup kami.",
+          },
+          {
+            label: "Karir",
+            href: "/informasi/about/careers",
+            icon: <Briefcase className="h-4 w-4" />,
+            description: "Bergabung dengan tim kami dan berkembang bersama.",
+          },
+        ],
+      },
+      {
+        label: "Kontak",
+        href: "/informasi/contact",
+        icon: <Phone className="h-4 w-4" />,
+        description: "Hubungi kami untuk pertanyaan atau kerja sama.",
+        children: [
+          {
+            label: "Customer Support",
+            href: "/informasi/contact/support",
+            icon: <Headphones className="h-4 w-4" />,
+            description: "Dapatkan bantuan terkait layanan kami.",
+          },
+          {
+            label: "Kemitraan",
+            href: "/informasi/contact/partnership",
+            icon: <Handshake className="h-4 w-4" />,
+            description: "Bekerja sama dengan kami untuk solusi bisnis.",
+          },
+        ],
       },
     ],
   },
 ];
 
-interface MenuItem {
-  label: string;
-  href: string;
-  submenu: {
-    label: string;
-    href: string;
-    icon: React.ReactNode;
-    description: string;
-  }[];
+// MenuItem Component for Mobile View
+function MobileMenuItem({
+  item,
+  pathname
+}: {
+  item: SubMenuItem;
+  pathname: string;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="flex flex-col">
+      {item.children ? (
+        // Item with children
+        <div className="flex flex-col">
+          <button
+            className={cn(
+              "flex items-center justify-between w-full px-4 py-2 text-sm transition-colors rounded-md",
+              pathname === item.href
+                ? "text-blue-500 bg-blue-50 dark:bg-blue-950/20"
+                : "text-foreground/80 hover:bg-accent hover:text-primary"
+            )}
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            <div className="flex items-center gap-2">
+              {item.icon}
+              <span>{item.label}</span>
+            </div>
+            <ChevronRight className={cn(
+              "h-4 w-4 transition-transform",
+              isOpen ? "rotate-90" : ""
+            )} />
+          </button>
+
+          {/* Children submenu */}
+          {isOpen && (
+            <div className="flex flex-col gap-1 pl-8 mt-1 mb-2">
+              {item.children.map((child) => (
+                <Link
+                  key={child.label}
+                  href={child.href}
+                  className={cn(
+                    "flex items-center gap-2 px-4 py-2 text-xs transition-colors rounded-md",
+                    pathname === child.href
+                      ? "text-blue-500 bg-blue-50 dark:bg-blue-950/20"
+                      : "text-foreground/80 hover:bg-accent hover:text-primary"
+                  )}
+                >
+                  {child.icon}
+                  <span>{child.label}</span>
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+      ) : (
+        // Item without children
+        <Link
+          href={item.href}
+          className={cn(
+            "flex items-center gap-2 px-4 py-2 text-sm transition-colors rounded-md",
+            pathname === item.href
+              ? "text-blue-500 bg-blue-50 dark:bg-blue-950/20"
+              : "text-foreground/80 hover:bg-accent hover:text-primary"
+          )}
+        >
+          {item.icon}
+          <span>{item.label}</span>
+        </Link>
+      )}
+    </div>
+  );
 }
 
+// MenuItem Component - handles both desktop and mobile menu items
 function MenuItem({
   item,
   pathname,
@@ -156,6 +359,7 @@ function MenuItem({
   pathname: string;
   isMobile?: boolean;
 }) {
+  // Render for mobile view
   if (isMobile) {
     return (
       <AccordionItem value={item.label}>
@@ -165,18 +369,7 @@ function MenuItem({
         <AccordionContent>
           <div className="flex flex-col gap-2 pl-4">
             {item.submenu.map((subItem) => (
-              <Link
-                key={subItem.label}
-                href={subItem.href}
-                className={cn(
-                  "px-4 py-2 transition-colors",
-                  pathname === subItem.href
-                    ? "text-blue-500"
-                    : "text-foreground/80 hover:bg-accent hover:text-primary"
-                )}
-              >
-                {subItem.label}
-              </Link>
+              <MobileMenuItem key={subItem.label} item={subItem} pathname={pathname} />
             ))}
           </div>
         </AccordionContent>
@@ -184,6 +377,7 @@ function MenuItem({
     );
   }
 
+  // Render for desktop view
   return (
     <NavigationMenuItem>
       {item.submenu.length > 0 ? (
@@ -193,36 +387,65 @@ function MenuItem({
           </NavigationMenuTrigger>
 
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-2 p-3 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-              {item.submenu.map((subItem) => (
-                <li key={subItem.label}>
-                  <NavigationMenuLink asChild>
-                    <Link
-                      href={subItem.href}
-                      className="group flex items-center gap-3 p-3 rounded-md transition-all duration-300 "
-                    >
-                      {/* Icon Container */}
-                      <div className="flex items-center justify-center p-2 rounded-md bg-background border border-slate-200 dark:border-neutral-700 group-hover:border-primary transition-colors duration-300">
-                        {subItem.icon}
-                      </div>
+            {/* Special case for Informasi menu which has nested children */}
+            {item.label === "Informasi" ? (
+              <div className="grid grid-cols-2 gap-3 p-4 md:w-[600px] lg:w-[700px]">
+                {item.submenu.map((category) => (
+                  <div key={category.label} className="col-span-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      {category.icon}
+                      <h3 className="text-sm font-medium">{category.label}</h3>
+                    </div>
 
-                      {/* Text Container */}
-                      <div className="flex-1">
-                        <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors duration-300">
-                          {subItem.label}
-                        </p>
-                        <p className="text-xs text-muted-foreground">
-                          {subItem.description}
-                        </p>
-                      </div>
+                    <div className="pl-6">
+                      {category.children?.map((subItem) => (
+                        <NavigationMenuLink asChild key={subItem.label}>
+                          <Link
+                            href={subItem.href}
+                            className="flex items-center gap-2 p-2 text-sm rounded-md hover:bg-muted transition-colors"
+                          >
+                            {subItem.icon}
+                            <span>{subItem.label}</span>
+                          </Link>
+                        </NavigationMenuLink>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              /* Regular menu without nested children */
+              <ul className="grid w-[400px] gap-2 p-3 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                {item.submenu.map((subItem) => (
+                  <li key={subItem.label}>
+                    <NavigationMenuLink asChild>
+                      <Link
+                        href={subItem.href}
+                        className="group flex items-center gap-3 p-3 rounded-md transition-all duration-300"
+                      >
+                        {/* Icon Container */}
+                        <div className="flex items-center justify-center p-2 rounded-md bg-background border border-slate-200 dark:border-neutral-700 group-hover:border-primary transition-colors duration-300">
+                          {subItem.icon}
+                        </div>
 
-                      {/* Animated Arrow Icon */}
-                      <ArrowRight className="h-4 w-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-muted-foreground group-hover:text-primary" />
-                    </Link>
-                  </NavigationMenuLink>
-                </li>
-              ))}
-            </ul>
+                        {/* Text Container */}
+                        <div className="flex-1">
+                          <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors duration-300">
+                            {subItem.label}
+                          </p>
+                          <p className="text-xs text-muted-foreground">
+                            {subItem.description}
+                          </p>
+                        </div>
+
+                        {/* Arrow Icon */}
+                        <ArrowRight className="h-4 w-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-muted-foreground group-hover:text-primary" />
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                ))}
+              </ul>
+            )}
           </NavigationMenuContent>
         </>
       ) : (
@@ -230,7 +453,7 @@ function MenuItem({
           href={item.href}
           className={cn(
             "text-sm font-medium transition-colors",
-            pathname === item.href ? "text-blue-500" : " hover:text-blue-500"
+            pathname === item.href ? "text-blue-500" : "hover:text-blue-500"
           )}
         >
           {item.label}
@@ -240,6 +463,7 @@ function MenuItem({
   );
 }
 
+// DesktopMenu Component
 function DesktopMenu({
   menuItems,
   pathname,
@@ -260,6 +484,7 @@ function DesktopMenu({
   );
 }
 
+// MobileMenu Component
 function MobileMenu({
   menuItems,
   pathname,
@@ -273,28 +498,36 @@ function MobileMenu({
 }) {
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
-      <SheetTrigger asChild className="md:hidden">
-        <Button variant="ghost" size="icon">
+      <SheetTrigger asChild>
+        <Button variant="ghost" size="icon" className="md:hidden">
           <Menu className="h-5 w-5" />
+          <span className="sr-only">Open menu</span>
         </Button>
       </SheetTrigger>
-      <SheetContent side="right" className="w-[85vw] max-w-sm">
-        <VisuallyHidden>
-          <DialogTitle>Mobile Navigation</DialogTitle>
-        </VisuallyHidden>
-        <div className="flex flex-col h-full">
-          <div className="flex justify-between items-center mb-8">
-            <h2 className="text-lg font-bold">Menu</h2>
-            <SheetClose className="opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
+      <SheetContent side="right" className="w-[85vw] max-w-sm p-0">
+ <VisuallyHidden>
+                  <DialogTitle>Mobile Navigation</DialogTitle>
+                </VisuallyHidden>
+        <div className="flex flex-col h-full p-6">
+          <div className="flex justify-between items-center mb-6">
+            <div className="flex items-center gap-2">
+              <Image
+                src="/webtron.svg"
+                alt="Bulba Logo"
+                width={20}
+                height={20}
+                className="flex-shrink-0"
+              />
+              <h2 className="text-lg font-bold">Bulba</h2>
+            </div>
+            <SheetClose className="rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
               <VisuallyHidden>Close menu</VisuallyHidden>
             </SheetClose>
           </div>
-          <div className="relative mb-6">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input placeholder="Search..." className="pl-10" />
-          </div>
-          <nav className="flex-1 flex flex-col gap-2">
-            <Accordion type="single" collapsible>
+
+
+          <nav className="flex-1 overflow-y-auto">
+            <Accordion type="single" collapsible className="w-full">
               {menuItems.map((item) => (
                 <MenuItem
                   key={item.label}
@@ -305,20 +538,36 @@ function MobileMenu({
               ))}
             </Accordion>
           </nav>
+
+          <div className="mt-6 pt-6 border-t">
+            <Button className="w-full" asChild>
+              <Link
+                href="https://wa.me/6285157739978?text=Bang%20mau%20order"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2"
+              >
+                <MessageCircle className="h-4 w-4" />
+                Hubungi via Whatsapp
+              </Link>
+            </Button>
+          </div>
         </div>
       </SheetContent>
     </Sheet>
   );
 }
 
+// Main Navbar Component
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
+  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      setIsScrolled(window.scrollY > 10);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -326,33 +575,35 @@ export function Navbar() {
   }, []);
 
   return (
-    <nav
+    <header
       className={cn(
-        "sticky top-0 bg-inherit z-50 transition-all",
-        isScrolled ? " border-slate-6 dark:border-neutral-800" : ""
+        "sticky top-0 z-50 w-full transition-all duration-200",
+        isScrolled
+          ? "bg-white/80 dark:bg-background backdrop-blur-sm border-b border-slate-200 dark:border-neutral-800 shadow-sm"
+          : "bg-transparent"
       )}
     >
-      <div className="mx-auto px-6 lg:px-10">
+      <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Image
-            src="/webtron.svg"
-            alt="Webtron Logo"
-            width={20}
-            height={20}
-            className="flex-shrink-0 mr-2"
-          />
           <Link href="/" className="flex-shrink-0 flex items-center gap-2">
-            <h1 className="text-2xl font-bold text-primary ">Bulba</h1>
+            <Image
+              src="/webtron.svg"
+              alt="Bulba Logo"
+              width={24}
+              height={24}
+              className="flex-shrink-0"
+            />
+            <h1 className="text-xl font-bold text-primary">Bulba</h1>
           </Link>
 
           {/* Desktop Menu */}
-          <div className="flex-grow flex justify-center z-10">
+          <div className="flex-grow flex justify-center">
             <DesktopMenu menuItems={menuItems} pathname={pathname} />
           </div>
 
           {/* CTA and Mobile Menu */}
-          <div className="flex-shrink-0 flex items-center gap-4">
+          <div className="flex items-center gap-4">
             <Button
               variant="default"
               className="hidden md:flex items-center gap-2 rounded-full"
@@ -363,11 +614,12 @@ export function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <MessageCircle className="h-4 w-4" />
                 Whatsapp
               </Link>
             </Button>
 
-            {/* Mobile Menu Trigger */}
+            {/* Mobile Menu */}
             <MobileMenu
               menuItems={menuItems}
               pathname={pathname}
@@ -377,6 +629,6 @@ export function Navbar() {
           </div>
         </div>
       </div>
-    </nav>
+    </header>
   );
 }

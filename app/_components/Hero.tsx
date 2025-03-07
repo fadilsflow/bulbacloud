@@ -1,9 +1,7 @@
 import { GridPattern } from "@/components/magicui/grid-pattern";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
-import TechnologiesWeUse from "./stack";
 
 const Hero = () => {
   return (
@@ -39,7 +37,7 @@ Digital Solutions
 
       {/* Subheading */}
       <p className="mt-6 text-lg sm:text-xl max-w-2xl mx-auto text-muted-foreground">
-        Solusi website, hosting, dan cloud <span className="text-foreground">terjangkau</span> untuk bisnis dan individu.  
+        Solusi website, hosting, dan VPS <span className="text-foreground">terjangkau</span> untuk bisnis dan individu.  
         Buat website cepat, aman, dan modern dengan teknologi <span className="text-foreground">terbaik</span>. 🚀  
       </p>
 
