@@ -2,14 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import {
   Sheet,
   SheetContent,
   SheetTrigger,
   SheetClose,
-  SheetHeader,
-  SheetTitle,
 } from "@/components/ui/sheet";
 import {
   Menu,
@@ -594,7 +591,7 @@ export function Navbar() {
               height={24}
               className="flex-shrink-0"
             />
-            <h1 className="text-xl font-bold text-primary">Bulba</h1>
+            <h1 className="text-xl font-semibold text-primary">Bulba Cloud</h1>
           </Link>
 
           {/* Desktop Menu */}

@@ -1,16 +1,12 @@
-import Excellence from "./_components/excellence";
 import Hero from "./_components/Hero";
+import OurSolutions from "./_components/OurSolutions";
 
-import { Showcase } from "./_components/showcase";
-import WhatWeDo from "./_components/WhatsWeDo";
 
 export default function Home() {
   return (
     <div>
       <Hero />
-      <Excellence />
-      <WhatWeDo />
-      <Showcase />
+      <OurSolutions/>
     </div>
   );
 }
