@@ -16,7 +16,7 @@ export default function OurSolutions() {
         The <span className="text-primary">Solutions</span> We Provide
       </motion.h1>
       <div className="text-left w-full max-w-6xl">
-
+        <OurSolutionsGrid />
       </div>
     </div>
   );

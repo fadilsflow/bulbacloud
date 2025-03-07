@@ -1,13 +1,34 @@
+// data/services.ts
+
 export interface Services {
   id: number;
   name: string;
-  desc: string
+  desc: string;
   priceStart: number;
 }
-
-export const ServicesProducts: Services [] = [
+export const ServicesProducts: Services[] = [
   {
     id: 1,
-    name: ""
-  }
-]  
+    name: "Website Modern",
+    desc: "Website cepat, modern, dan responsif untuk bisnis atau personal.",
+    priceStart: 625000,
+  },
+  {
+    id: 2,
+    name: "Layanan Hosting",
+    desc: "Hosting stabil dan cepat untuk website, aplikasi, atau game.",
+    priceStart: 500000,
+  },
+  {
+    id: 3,
+    name: "VPS Berkualitas",
+    desc: "VPS handal dengan performa tinggi dan sumber daya dedicated.",
+    priceStart: 1500000,
+  },
+  {
+    id: 4,
+    name: "Domain Premium",
+    desc: "Domain siap pakai dengan proteksi Cloudflare dan Google Account.",
+    priceStart: 10000,
+  },
+];

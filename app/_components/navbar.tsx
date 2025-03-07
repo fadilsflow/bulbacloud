@@ -28,14 +28,12 @@ import {
   BookOpen,
   Cloud,
   Cpu,
-  SendIcon,
   InfoIcon,
   Target,
   Phone,
   Headphones,
   Handshake,
   FileText,
-  X,
   ChevronRight,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -84,13 +82,15 @@ const menuItems: MenuItem[] = [
         label: "Paket Hemat UMKM",
         href: "/websites/paket-hemat",
         icon: <Store className="h-4 w-4" />,
-        description: "Pilihan terbaik untuk UMKM dan Yayasan yang baru Go-Digital.",
+        description:
+          "Pilihan terbaik untuk UMKM dan Yayasan yang baru Go-Digital.",
       },
       {
         label: "Paket Bisnis",
         href: "/websites/paket-bisnis",
         icon: <Briefcase className="h-4 w-4" />,
-        description: "Website profesional untuk bisnis, portal berita, sekolah, dan portofolio.",
+        description:
+          "Website profesional untuk bisnis, portal berita, sekolah, dan portofolio.",
       },
       {
         label: "Paket Toko Online",
@@ -114,7 +114,8 @@ const menuItems: MenuItem[] = [
         label: "Minecraft Hosting",
         href: "/hosting/minecraft",
         icon: <Gamepad className="h-4 w-4" />,
-        description: "Server Minecraft dengan performa tinggi dan harga terjangkau.",
+        description:
+          "Server Minecraft dengan performa tinggi dan harga terjangkau.",
       },
       {
         label: "Docker Hosting",
@@ -126,7 +127,8 @@ const menuItems: MenuItem[] = [
         label: "Database Hosting",
         href: "/hosting/database",
         icon: <Database className="h-4 w-4" />,
-        description: "Hosting database dengan performa tinggi (MySQL, PostgreSQL, MongoDB).",
+        description:
+          "Hosting database dengan performa tinggi (MySQL, PostgreSQL, MongoDB).",
       },
       {
         label: "Cloud Hosting",
@@ -144,13 +146,15 @@ const menuItems: MenuItem[] = [
         label: "VPS Digital Ocean",
         href: "/vps/digital-ocean",
         icon: <Server className="h-4 w-4" />,
-        description: "VPS berbasis cloud dengan performa tinggi dari Digital Ocean.",
+        description:
+          "VPS berbasis cloud dengan performa tinggi dari Digital Ocean.",
       },
       {
         label: "VPS Dedicated Indonesia",
         href: "/vps/kvm",
         icon: <Cpu className="h-4 w-4" />,
-        description: "VPS berbasis KVM di Indonesia dengan sumber daya penuh dan stabilitas terbaik.",
+        description:
+          "VPS berbasis KVM di Indonesia dengan sumber daya penuh dan stabilitas terbaik.",
       },
     ],
   },
@@ -162,7 +166,8 @@ const menuItems: MenuItem[] = [
         label: "Domain + Cloudflare & Google Account",
         href: "/domain",
         icon: <Globe className="h-4 w-4" />,
-        description: "Domain siap pakai, sudah di Cloudflare & dilengkapi akun Google baru.",
+        description:
+          "Domain siap pakai, sudah di Cloudflare & dilengkapi akun Google baru.",
       },
     ],
   },
@@ -187,12 +192,6 @@ const menuItems: MenuItem[] = [
             href: "/informasi/community/discord",
             icon: <MessageSquare className="h-4 w-4" />,
             description: "Komunitas untuk diskusi bisnis & teknologi.",
-          },
-          {
-            label: "Telegram Channel",
-            href: "/informasi/community/telegram",
-            icon: <SendIcon className="h-4 w-4" />,
-            description: "Dapatkan update terbaru melalui Telegram.",
           },
         ],
       },
@@ -275,7 +274,7 @@ const menuItems: MenuItem[] = [
 // MenuItem Component for Mobile View
 function MobileMenuItem({
   item,
-  pathname
+  pathname,
 }: {
   item: SubMenuItem;
   pathname: string;
@@ -300,10 +299,12 @@ function MobileMenuItem({
               {item.icon}
               <span>{item.label}</span>
             </div>
-            <ChevronRight className={cn(
-              "h-4 w-4 transition-transform",
-              isOpen ? "rotate-90" : ""
-            )} />
+            <ChevronRight
+              className={cn(
+                "h-4 w-4 transition-transform",
+                isOpen ? "rotate-90" : ""
+              )}
+            />
           </button>
 
           {/* Children submenu */}
@@ -366,7 +367,11 @@ function MenuItem({
         <AccordionContent>
           <div className="flex flex-col gap-2 pl-4">
             {item.submenu.map((subItem) => (
-              <MobileMenuItem key={subItem.label} item={subItem} pathname={pathname} />
+              <MobileMenuItem
+                key={subItem.label}
+                item={subItem}
+                pathname={pathname}
+              />
             ))}
           </div>
         </AccordionContent>
@@ -418,7 +423,7 @@ function MenuItem({
                     <NavigationMenuLink asChild>
                       <Link
                         href={subItem.href}
-                        className="group flex items-center gap-3 p-3 rounded-md transition-all duration-300"
+                        className="group flex  items-center gap-3 p-3 rounded-md transition-all duration-300"
                       >
                         {/* Icon Container */}
                         <div className="flex items-center justify-center p-2 rounded-md bg-background border border-slate-200 dark:border-neutral-700 group-hover:border-primary transition-colors duration-300">
@@ -502,26 +507,25 @@ function MobileMenu({
         </Button>
       </SheetTrigger>
       <SheetContent side="right" className="w-[85vw] max-w-sm p-0">
- <VisuallyHidden>
-                  <DialogTitle>Mobile Navigation</DialogTitle>
-                </VisuallyHidden>
+        <VisuallyHidden>
+          <DialogTitle>Mobile Navigation</DialogTitle>
+        </VisuallyHidden>
         <div className="flex flex-col h-full p-6">
           <div className="flex justify-between items-center mb-6">
             <div className="flex items-center gap-2">
               <Image
-                src="/webtron.svg"
+                src="/bulba.svg"
                 alt="Bulba Logo"
                 width={20}
                 height={20}
                 className="flex-shrink-0"
               />
-              <h2 className="text-lg font-bold">Bulba</h2>
+              <h2 className="text-lg font-bold ">BULBA.CLOUD</h2>
             </div>
             <SheetClose className="rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
               <VisuallyHidden>Close menu</VisuallyHidden>
             </SheetClose>
           </div>
-
 
           <nav className="flex-1 overflow-y-auto">
             <Accordion type="single" collapsible className="w-full">
@@ -574,9 +578,9 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-200",
+        "sticky top-0 z-50 w-full transition-all duration-200 px-10 dark:bg-background",
         isScrolled
-          ? "bg-white/80 dark:bg-background backdrop-blur-sm border-b border-slate-200 dark:border-neutral-800 shadow-sm"
+          ? "bg-background dark:bg-background  shadow-xl"
           : "bg-transparent"
       )}
     >
@@ -585,13 +589,13 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex-shrink-0 flex items-center gap-2">
             <Image
-              src="/webtron.svg"
+              src="/bulba.svg"
               alt="Bulba Logo"
               width={24}
               height={24}
               className="flex-shrink-0"
             />
-            <h1 className="text-xl font-semibold text-primary">Bulba Cloud</h1>
+            <h1 className="text-xl font-bold ">BULBA.CLOUD</h1>
           </Link>
 
           {/* Desktop Menu */}
@@ -599,22 +603,33 @@ export function Navbar() {
             <DesktopMenu menuItems={menuItems} pathname={pathname} />
           </div>
 
-          {/* CTA and Mobile Menu */}
           <div className="flex items-center gap-4">
-            <Button
-              variant="default"
-              className="hidden md:flex items-center gap-2 rounded-full"
-              asChild
+            <Link
+              href={"https://discord.gg/4Z6JUZv"}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <Link
-                href="https://wa.me/6285157739978?text=Bang%20mau%20order"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <MessageCircle className="h-4 w-4" />
-                Whatsapp
-              </Link>
-            </Button>
+              <Image
+                src="/discord.svg"
+                alt="Discord Logo"
+                width={24}
+                height={24}
+                className="invert opacity-75 hover:opacity-100 transition-all duration-300 "
+              />
+            </Link>
+            <Link
+              href={"https://instagram.com"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/instagram.svg"
+                alt="Instagram Logo"
+                width={24}
+                height={24}
+                className="invert opacity-75 hover:opacity-100 transition-all duration-300 "
+              />
+            </Link>
 
             {/* Mobile Menu */}
             <MobileMenu

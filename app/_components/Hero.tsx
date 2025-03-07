@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen relative mx-auto px-4 pt-12 sm:pt-12 md:pt-12 text-center">
+    <section className="relative mx-auto px-4 pt-8 sm:pt-12 md:pt-12 text-center">
       {/* Background Grid Pattern */}
       <GridPattern
         width={80}
@@ -20,53 +20,46 @@ const Hero = () => {
       <div className="flex items-center justify-center">
         <div
           className={cn(
-            "rounded-full border border-neutral-200 bg-white px-3 py-1 text-sm font-medium text-neutral-800 shadow-sm transition-all duration-300 ease-in-out hover:shadow-md dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100"
+            "rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs sm:text-sm font-medium text-primary shadow-sm transition-all duration-300 ease-in-out hover:bg-primary/20 hover:shadow-md dark:bg-primary/20 dark:text-primary-foreground"
           )}
         >
           <span>🚀 Bangun Website & Infrastruktur Digital Anda</span>
         </div>
       </div>
 
-{/* Main Headline */}
-      <h1 className="text-4xl  sm:text-5xl md:text-6xl font-semibold mt-4">
- Simple & Reliable 
-      </h1>
-      <h1 className="text-4xl  sm:text-5xl md:text-6xl font-semibold mt-4">
-Digital Solutions
+      {/* Main Headline */}
+      <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold mt-4 text-foreground">
+        Simple & Reliable Digital Solutions
       </h1>
 
       {/* Subheading */}
-      <p className="mt-6 text-lg sm:text-xl max-w-2xl mx-auto text-muted-foreground">
-        Solusi website, hosting, dan VPS <span className="text-foreground">terjangkau</span> untuk bisnis dan individu.  
-        Buat website cepat, aman, dan modern dengan teknologi <span className="text-foreground">terbaik</span>. 🚀  
+      <p className="mt-4 text-sm sm:text-lg max-w-2xl mx-auto text-muted-foreground">
+        Solusi website, hosting, dan VPS{" "}
+        <span className="text-primary">terjangkau</span> untuk bisnis dan
+        individu. Buat website cepat, aman, dan modern dengan teknologi{" "}
+        <span className="text-primary">terbaik</span>. 🚀
       </p>
 
       {/* Call to Action Buttons */}
-      <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+      <div className="mt-6 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
         <Button
           variant="default"
-          size="lg"
-          className="inline-flex items-center gap-2 rounded-full"
+          size="sm" // Ubah size ke sm untuk mobile
+          className="inline-flex items-center gap-2 rounded-full bg-button-metallic text-primary-foreground hover:bg-button-metallic-hover transition-all duration-300 text-sm sm:text-base"
           asChild
         >
-          <Link href="/konsultasi">
-Order via WhatsApp
-          </Link>
+          <Link href="/konsultasi">Order via WhatsApp</Link>
         </Button>
-
         <Button
           variant="outline"
-          size="lg"
-          className="inline-flex items-center gap-2 rounded-full"
+          size="sm" // Ubah size ke sm untuk mobile
+          className="inline-flex items-center gap-2 rounded-full border-primary hover:text-primary text-primary hover:bg-primary/20 hover:border-primary/20 text-sm sm:text-base"
           asChild
         >
-          <Link href="/layanan">
-Order via Discord
-          </Link>
+          <Link href="/layanan">Order via Discord</Link>
         </Button>
       </div>
     </section>
-
   );
 };
 

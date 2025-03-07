@@ -1,12 +1,12 @@
 import Hero from "./_components/Hero";
-import OurSolutions from "./_components/OurSolutions";
-
+  
+import OurSolutionsGrid from "./_components/OurSolutionsGrid";
 
 export default function Home() {
   return (
     <div>
       <Hero />
-      <OurSolutions/>
+      <OurSolutionsGrid />
     </div>
   );
 }
