@@ -58,18 +58,18 @@ import {
 import { DialogTitle } from "@radix-ui/react-dialog";
 import { ModeToggle } from "@/components/mode-toggle";
 
-// Type definitions
-interface SubMenuItem {
-  label: string;
-  href: string;
-  icon: React.ReactNode;
-  description: string;
-  children?: SubMenuItem[];
-}
+  // Type definitions
+  interface SubMenuItem {
+    label: string;
+    href: string;
+    icon: React.ReactNode;
+    description: string;
+    children?: SubMenuItem[];
+  }
 
-interface MenuItem {
-  label: string;
-  href: string;
+  interface MenuItem {
+    label: string;
+    href: string;
   submenu: SubMenuItem[];
 }
 
@@ -81,27 +81,27 @@ const menuItems: MenuItem[] = [
     submenu: [
       {
         label: "Minecraft Hosting",
-        href: "/minecraft",
+        href: "/minecraft-hosting",
         icon: <Gamepad className="h-4 w-4" />,
         description:
           "Server Minecraft dengan performa tinggi dan harga terjangkau.",
       },
       {
         label: "Docker Hosting",
-        href: "/docker",
+        href: "/docker-hosting",
         icon: <Boxes className="h-4 w-4" />,
         description: "Deploy aplikasi berbasis Docker dengan cepat dan stabil.",
       },
       {
         label: "Database Hosting",
-        href: "/database",
+        href: "/database-hosting",
         icon: <Database className="h-4 w-4" />,
         description:
           "Hosting database dengan performa tinggi (MySQL, PostgreSQL, MongoDB).",
       },
       {
         label: "Cloud Hosting",
-        href: "/cloud",
+        href: "/cloud-hosting",
         icon: <Cloud className="h-4 w-4" />,
         description: "Hosting fleksibel dan scalable berbasis cloud.",
       },
@@ -120,7 +120,7 @@ const menuItems: MenuItem[] = [
       },
       {
         label: "VPS Dedicated Indonesia",
-        href: "/kvm",
+        href: "/dedicated-indonesia",
         icon: <Cpu className="h-4 w-4" />,
         description:
           "VPS berbasis KVM di Indonesia dengan sumber daya penuh dan stabilitas terbaik.",
@@ -133,27 +133,27 @@ const menuItems: MenuItem[] = [
     submenu: [
       {
         label: "Paket Hemat UMKM",
-        href: "/paket-hemat",
+        href: "/website-hemat-umkm",
         icon: <Store className="h-4 w-4" />,
         description:
           "Pilihan terbaik untuk UMKM dan Yayasan yang baru Go-Digital.",
       },
       {
         label: "Paket Bisnis",
-        href: "/paket-bisnis",
+        href: "/website-bisnis",
         icon: <Briefcase className="h-4 w-4" />,
         description:
           "Website profesional untuk bisnis, portal berita, sekolah, dan portofolio.",
       },
       {
         label: "Paket Toko Online",
-        href: "/paket-toko-online",
+        href: "/website-toko-online",
         icon: <ShoppingCart className="h-4 w-4" />,
         description: "Website e-commerce dengan fitur checkout yang fleksibel.",
       },
       {
         label: "Paket Custom Fitur Website",
-        href: "/paket-custom",
+        href: "/website-custom-fitur",
         icon: <Settings className="h-4 w-4" />,
         description: "Solusi kustom untuk bisnis dengan fitur spesifik.",
       },

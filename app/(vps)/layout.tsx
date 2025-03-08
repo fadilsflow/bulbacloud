@@ -1,8 +1,7 @@
 "use client";
 
-import { hostingServices } from "./_component/ServicesData";
-
-import NavbarService from "./_component/navbar-services";
+import NavbarService from "../(hosting)/_component/navbar-services";
+import { vpsServices } from "../(hosting)/_component/ServicesData";
 
 interface ServicesLayoutProps {
   children: React.ReactNode;
@@ -13,7 +12,7 @@ export default function ServicesLayout({ children }: ServicesLayoutProps) {
   return (
     <>
       <div className=" space-y-5">
-        <NavbarService services={hostingServices} />
+        <NavbarService services={vpsServices} />
 
         <div>{children}</div>
       </div>

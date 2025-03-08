@@ -30,7 +30,7 @@ export default function NavbarService({ services }: NavbarServiceProps) {
                   key={service.id}
                   href={service.href}
                   className={cn(
-                    "flex items-center gap-2 h-16 px-2 font-medium transition-all border-b-2",
+                    "flex items-center gap-2 h-16 px-10 font-medium transition-all border-b-2",
                     isActive
                       ? "text-foreground border-foreground"
                       : "text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-200 border-transparent "
