@@ -10,7 +10,7 @@ export interface vpsDigialOcean {
     region: string;
   };
 }
-
+  
 export const vpsDigialOceanProducts: vpsDigialOcean[] = [
   {
     id: 1,

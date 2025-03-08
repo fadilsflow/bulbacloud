@@ -81,27 +81,27 @@ const menuItems: MenuItem[] = [
     submenu: [
       {
         label: "Minecraft Hosting",
-        href: "/hosting/minecraft",
+        href: "/minecraft",
         icon: <Gamepad className="h-4 w-4" />,
         description:
           "Server Minecraft dengan performa tinggi dan harga terjangkau.",
       },
       {
         label: "Docker Hosting",
-        href: "/hosting/docker",
+        href: "/docker",
         icon: <Boxes className="h-4 w-4" />,
         description: "Deploy aplikasi berbasis Docker dengan cepat dan stabil.",
       },
       {
         label: "Database Hosting",
-        href: "/hosting/database",
+        href: "/database",
         icon: <Database className="h-4 w-4" />,
         description:
           "Hosting database dengan performa tinggi (MySQL, PostgreSQL, MongoDB).",
       },
       {
         label: "Cloud Hosting",
-        href: "/hosting/cloud",
+        href: "/cloud",
         icon: <Cloud className="h-4 w-4" />,
         description: "Hosting fleksibel dan scalable berbasis cloud.",
       },
@@ -113,14 +113,14 @@ const menuItems: MenuItem[] = [
     submenu: [
       {
         label: "VPS Digital Ocean",
-        href: "/vps/digital-ocean",
+        href: "/digital-ocean",
         icon: <Server className="h-4 w-4" />,
         description:
           "VPS berbasis cloud dengan performa tinggi dari Digital Ocean.",
       },
       {
         label: "VPS Dedicated Indonesia",
-        href: "/vps/kvm",
+        href: "/kvm",
         icon: <Cpu className="h-4 w-4" />,
         description:
           "VPS berbasis KVM di Indonesia dengan sumber daya penuh dan stabilitas terbaik.",
@@ -133,27 +133,27 @@ const menuItems: MenuItem[] = [
     submenu: [
       {
         label: "Paket Hemat UMKM",
-        href: "/websites/paket-hemat",
+        href: "/paket-hemat",
         icon: <Store className="h-4 w-4" />,
         description:
           "Pilihan terbaik untuk UMKM dan Yayasan yang baru Go-Digital.",
       },
       {
         label: "Paket Bisnis",
-        href: "/websites/paket-bisnis",
+        href: "/paket-bisnis",
         icon: <Briefcase className="h-4 w-4" />,
         description:
           "Website profesional untuk bisnis, portal berita, sekolah, dan portofolio.",
       },
       {
         label: "Paket Toko Online",
-        href: "/websites/paket-toko-online",
+        href: "/paket-toko-online",
         icon: <ShoppingCart className="h-4 w-4" />,
         description: "Website e-commerce dengan fitur checkout yang fleksibel.",
       },
       {
         label: "Paket Custom Fitur Website",
-        href: "/websites/paket-custom",
+        href: "/paket-custom",
         icon: <Settings className="h-4 w-4" />,
         description: "Solusi kustom untuk bisnis dengan fitur spesifik.",
       },
@@ -178,19 +178,19 @@ const menuItems: MenuItem[] = [
     submenu: [
       {
         label: "Komunitas",
-        href: "/informasi/community",
+        href: "/community",
         icon: <Users className="h-4 w-4" />,
         description: "Bergabung dengan komunitas dan diskusi online.",
         children: [
           {
             label: "WhatsApp Group",
-            href: "/informasi/community/whatsapp",
+            href: "/whatsapp",
             icon: <MessageCircle className="h-4 w-4" />,
             description: "Gabung dengan komunitas di WhatsApp.",
           },
           {
             label: "Discord",
-            href: "/informasi/community/discord",
+            href: "/discord",
             icon: <MessageSquare className="h-4 w-4" />,
             description: "Komunitas untuk diskusi bisnis & teknologi.",
           },
@@ -198,25 +198,25 @@ const menuItems: MenuItem[] = [
       },
       {
         label: "Sumber Daya",
-        href: "/informasi/resources",
+        href: "/resources",
         icon: <BookOpen className="h-4 w-4" />,
         description: "Baca artikel dan panduan terbaru.",
         children: [
           {
             label: "Blog",
-            href: "/informasi/resources/blog",
+            href: "/blog",
             icon: <FileText className="h-4 w-4" />,
             description: "Artikel terbaru tentang bisnis & teknologi.",
           },
           {
             label: "Guides",
-            href: "/informasi/resources/guides",
+            href: "/guides",
             icon: <HelpCircle className="h-4 w-4" />,
             description: "Panduan lengkap untuk layanan kami.",
           },
           {
             label: "FAQ",
-            href: "/informasi/resources/faq",
+            href: "/faq",
             icon: <InfoIcon className="h-4 w-4" />,
             description: "Jawaban atas pertanyaan umum.",
           },
@@ -224,25 +224,25 @@ const menuItems: MenuItem[] = [
       },
       {
         label: "Tentang Kami",
-        href: "/informasi/about",
+        href: "/about",
         icon: <Star className="h-4 w-4" />,
         description: "Kenali lebih jauh tentang startup kami.",
         children: [
           {
             label: "Visi & Misi",
-            href: "/informasi/about/vision-mission",
+            href: "/vision-mission",
             icon: <Target className="h-4 w-4" />,
             description: "Tujuan dan nilai utama yang kami pegang.",
           },
           {
             label: "Tim Kami",
-            href: "/informasi/about/team",
+            href: "/team",
             icon: <Users className="h-4 w-4" />,
             description: "Kenali orang-orang di balik startup kami.",
           },
           {
             label: "Karir",
-            href: "/informasi/about/careers",
+            href: "/careers",
             icon: <Briefcase className="h-4 w-4" />,
             description: "Bergabung dengan tim kami dan berkembang bersama.",
           },
@@ -250,19 +250,19 @@ const menuItems: MenuItem[] = [
       },
       {
         label: "Kontak",
-        href: "/informasi/contact",
+        href: "/contact",
         icon: <Phone className="h-4 w-4" />,
         description: "Hubungi kami untuk pertanyaan atau kerja sama.",
         children: [
           {
             label: "Customer Support",
-            href: "/informasi/contact/support",
+            href: "/contact/support",
             icon: <Headphones className="h-4 w-4" />,
             description: "Dapatkan bantuan terkait layanan kami.",
           },
           {
             label: "Kemitraan",
-            href: "/informasi/contact/partnership",
+            href: "/contact/partnership",
             icon: <Handshake className="h-4 w-4" />,
             description: "Bekerja sama dengan kami untuk solusi bisnis.",
           },
@@ -385,7 +385,7 @@ function MenuItem({
     <NavigationMenuItem>
       {item.submenu.length > 0 ? (
         <>
-          <NavigationMenuTrigger className="hover:text-blue-500">
+          <NavigationMenuTrigger className="hover:text-blue-500 font-bold">
             {item.label}
           </NavigationMenuTrigger>
 
