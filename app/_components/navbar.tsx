@@ -56,6 +56,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { DialogTitle } from "@radix-ui/react-dialog";
+import { ModeToggle } from "@/components/mode-toggle";
 
 // Type definitions
 interface SubMenuItem {
@@ -74,38 +75,6 @@ interface MenuItem {
 
 // Menu data
 const menuItems: MenuItem[] = [
-  {
-    label: "Website",
-    href: "/websites",
-    submenu: [
-      {
-        label: "Paket Hemat UMKM",
-        href: "/websites/paket-hemat",
-        icon: <Store className="h-4 w-4" />,
-        description:
-          "Pilihan terbaik untuk UMKM dan Yayasan yang baru Go-Digital.",
-      },
-      {
-        label: "Paket Bisnis",
-        href: "/websites/paket-bisnis",
-        icon: <Briefcase className="h-4 w-4" />,
-        description:
-          "Website profesional untuk bisnis, portal berita, sekolah, dan portofolio.",
-      },
-      {
-        label: "Paket Toko Online",
-        href: "/websites/paket-toko-online",
-        icon: <ShoppingCart className="h-4 w-4" />,
-        description: "Website e-commerce dengan fitur checkout yang fleksibel.",
-      },
-      {
-        label: "Paket Custom Fitur Website",
-        href: "/websites/paket-custom",
-        icon: <Settings className="h-4 w-4" />,
-        description: "Solusi kustom untuk bisnis dengan fitur spesifik.",
-      },
-    ],
-  },
   {
     label: "Hosting",
     href: "/hosting",
@@ -155,6 +124,38 @@ const menuItems: MenuItem[] = [
         icon: <Cpu className="h-4 w-4" />,
         description:
           "VPS berbasis KVM di Indonesia dengan sumber daya penuh dan stabilitas terbaik.",
+      },
+    ],
+  },
+  {
+    label: "Website",
+    href: "/websites",
+    submenu: [
+      {
+        label: "Paket Hemat UMKM",
+        href: "/websites/paket-hemat",
+        icon: <Store className="h-4 w-4" />,
+        description:
+          "Pilihan terbaik untuk UMKM dan Yayasan yang baru Go-Digital.",
+      },
+      {
+        label: "Paket Bisnis",
+        href: "/websites/paket-bisnis",
+        icon: <Briefcase className="h-4 w-4" />,
+        description:
+          "Website profesional untuk bisnis, portal berita, sekolah, dan portofolio.",
+      },
+      {
+        label: "Paket Toko Online",
+        href: "/websites/paket-toko-online",
+        icon: <ShoppingCart className="h-4 w-4" />,
+        description: "Website e-commerce dengan fitur checkout yang fleksibel.",
+      },
+      {
+        label: "Paket Custom Fitur Website",
+        href: "/websites/paket-custom",
+        icon: <Settings className="h-4 w-4" />,
+        description: "Solusi kustom untuk bisnis dengan fitur spesifik.",
       },
     ],
   },
@@ -580,7 +581,7 @@ export function Navbar() {
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-200 px-10 dark:bg-background",
         isScrolled
-          ? "bg-background dark:bg-background  shadow-xl"
+          ? "bg-background dark:bg-background  shadow-md"
           : "bg-transparent"
       )}
     >
@@ -589,13 +590,20 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex-shrink-0 flex items-center gap-2">
             <Image
-              src="/bulba.svg"
+              src="/faviocon.svg"
               alt="Bulba Logo"
-              width={24}
-              height={24}
+              width={40}
+              height={40}
               className="flex-shrink-0"
             />
-            <h1 className="text-xl font-bold ">BULBA.CLOUD</h1>
+            <Image
+              src="/bulba-text.svg"
+              alt="Bulba Logo"
+              width={60}
+              height={60}
+              className="flex-shrink-0 dark:invert"
+            />
+            {/* <h1 className="text-xl font-bold ">BULBA.CLOUD</h1> */}
           </Link>
 
           {/* Desktop Menu */}
@@ -604,6 +612,7 @@ export function Navbar() {
           </div>
 
           <div className="flex items-center gap-4">
+            <ModeToggle />
             <Link
               href={"https://discord.gg/4Z6JUZv"}
               target="_blank"
@@ -614,7 +623,7 @@ export function Navbar() {
                 alt="Discord Logo"
                 width={24}
                 height={24}
-                className="invert opacity-75 hover:opacity-100 transition-all duration-300 "
+                className="dark:invert opacity-75 hover:opacity-100 transition-all duration-300"
               />
             </Link>
             <Link
@@ -627,7 +636,7 @@ export function Navbar() {
                 alt="Instagram Logo"
                 width={24}
                 height={24}
-                className="invert opacity-75 hover:opacity-100 transition-all duration-300 "
+                className="dark:invert opacity-75 hover:opacity-100 transition-all duration-300 "
               />
             </Link>
 

@@ -18,6 +18,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Bulba",
   description: "Simple & Reliable Digital Solutions",
+  icons: "/faviocon.svg",
 };
 
 export default function RootLayout({

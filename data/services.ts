@@ -9,21 +9,21 @@ export interface Services {
 export const ServicesProducts: Services[] = [
   {
     id: 1,
-    name: "Website Modern",
-    desc: "Website cepat, modern, dan responsif untuk bisnis atau personal.",
-    priceStart: 625000,
-  },
-  {
-    id: 2,
     name: "Layanan Hosting",
     desc: "Hosting stabil dan cepat untuk website, aplikasi, atau game.",
     priceStart: 500000,
   },
   {
-    id: 3,
+    id: 2,
     name: "VPS Berkualitas",
     desc: "VPS handal dengan performa tinggi dan sumber daya dedicated.",
     priceStart: 1500000,
+  },
+  {
+    id: 3,
+    name: "Website Modern",
+    desc: "Website cepat, modern, dan responsif untuk bisnis atau personal.",
+    priceStart: 625000,
   },
   {
     id: 4,
