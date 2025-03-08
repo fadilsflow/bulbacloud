@@ -2,19 +2,20 @@ import { GridPattern } from "@/components/magicui/grid-pattern";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import OurSolutionsGrid from "./OurSolutionsGrid";
 
 const Hero = () => {
   return (
-    <section className="relative mx-auto px-4 pt-8 sm:pt-12 md:pt-12 text-center">
+    <section className="relative  mx-auto px-4 pt-8 sm:pt-12 md:pt-12 text-center">
       {/* Background Grid Pattern */}
       <GridPattern
-        width={80}
-        height={50}
+        width={100}
+        height={100}
         x={-1}
         y={-1}
         strokeDasharray={"10 2"}
         className={cn(
-          "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
+          "[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]"
         )}
       />
       <div className="flex items-center justify-center">
@@ -41,7 +42,7 @@ const Hero = () => {
       </p>
 
       {/* Call to Action Buttons */}
-      <div className="mt-6 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+      <div className="mt-6 flex flex-row justify-center gap-3 sm:gap-4">
         <Button
           variant="default"
           size="sm" // Ubah size ke sm untuk mobile
@@ -53,12 +54,13 @@ const Hero = () => {
         <Button
           variant="outline"
           size="sm" // Ubah size ke sm untuk mobile
-          className="inline-flex items-center gap-2 rounded-full border-primary hover:text-primary text-primary hover:bg-primary/20 hover:border-primary/20 text-sm sm:text-base"
+          className="inline-flex items-center gap-2 rounded-full border-primary hover:text-primary text-primary  hover:bg-primary/20 hover:border-primary/20 text-sm sm:text-base"
           asChild
         >
           <Link href="/layanan">Order via Discord</Link>
         </Button>
       </div>
+      <OurSolutionsGrid />
     </section>
   );
 };

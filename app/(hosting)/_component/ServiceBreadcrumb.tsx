@@ -8,10 +8,9 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import Link from "next/link";
-import { Service } from "./data"; // Import tipe Service dari file data
 
 interface ServiceBreadcrumbProps {
-  currentService: Service;
+  currentService: string;
 }
 
 export function ServiceBreadcrumb({ currentService }: ServiceBreadcrumbProps) {

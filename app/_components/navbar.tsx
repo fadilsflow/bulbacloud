@@ -579,10 +579,10 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-200 px-10 dark:bg-background",
+        "sticky top-0 z-50 w-full transition-all duration-200 px-10 dark:bg-background border-b ",
         isScrolled
-          ? "bg-background dark:bg-background  shadow-md"
-          : "bg-transparent"
+          ? "bg-background dark:bg-background "
+          : "bg-background dark:bg-background"
       )}
     >
       <div className="container mx-auto px-4 md:px-6">
@@ -590,7 +590,7 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex-shrink-0 flex items-center gap-2">
             <Image
-              src="/faviocon.svg"
+              src="/bulba.svg"
               alt="Bulba Logo"
               width={40}
               height={40}
@@ -607,7 +607,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="flex-grow flex justify-center">
+          <div className="ml-3 flex-grow flex justify-between">
             <DesktopMenu menuItems={menuItems} pathname={pathname} />
           </div>
 
@@ -621,8 +621,8 @@ export function Navbar() {
               <Image
                 src="/discord.svg"
                 alt="Discord Logo"
-                width={24}
-                height={24}
+                width={18}
+                height={18}
                 className="dark:invert opacity-75 hover:opacity-100 transition-all duration-300"
               />
             </Link>
@@ -634,11 +634,26 @@ export function Navbar() {
               <Image
                 src="/instagram.svg"
                 alt="Instagram Logo"
-                width={24}
-                height={24}
+                width={18}
+                height={18}
                 className="dark:invert opacity-75 hover:opacity-100 transition-all duration-300 "
               />
             </Link>
+            {/* <Button
+              variant={"secondary"}
+              className="px-3 py-1 max-h-7 rounded-md text-xs "
+              asChild
+            >
+              <Link href="/">Daftar</Link>
+            </Button> */}
+            
+            <Button
+              variant={"outline"}
+              className="px-3 py-1 max-h-7 rounded-md text-xs bg-blue-500 text-white hover:bg-blue-600"
+              asChild
+            >
+              <Link href="/">Dashboard</Link>
+            </Button>
 
             {/* Mobile Menu */}
             <MobileMenu

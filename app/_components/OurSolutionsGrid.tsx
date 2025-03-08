@@ -12,10 +12,10 @@ export default function OurSolutionsGrid() {
     <section className="py-12 bg-background">
       <div className="container mx-auto px-4">
         {/* Gunakan flexbox + overflow-x untuk scrolling di mobile */}
-        <div className="flex space-x-4 overflow-x-auto scrollbar-hide sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:overflow-visible gap-6 p-10">
+        <div className="flex space-x-4 overflow-x-auto scrollbar-hide sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:overflow-visible gap-6 ">
           {ServicesProducts.map((service) => (
-            <Link key={service.id} href={`/layanan/${service.id}`} passHref>
-              <Card className="min-w-[80%] sm:min-w-0 group relative rounded-tr-3xl rounded-tl-none rounded-br-none rounded-bl-2xl overflow-hidden shadow-xl hover:shadow-xl transition-shadow duration-300">
+            <Link key={service.id} href={service.href} passHref>
+              <Card className="min-w-[80%] sm:min-w-0 group relative rounded-tr-3xl rounded-tl-none rounded-br-none rounded-bl-2xl overflow-hidden shadow-xl hover:shadow-xl transition-shadow duration-300 h-full dark:border-2 dark:border-primary">
                 {/* Gradient Background */}
                 <div className="absolute inset-0 bg-card-gradient opacity-100 group-hover:opacity-90 transition-opacity duration-300" />
 

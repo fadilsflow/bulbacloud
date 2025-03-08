@@ -13,9 +13,10 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Bulba",
-  description: "Simple & Reliable Digital Solutions",
-  icons: "/faviocon.svg",
+  title: "Simple & Reliable Digital Solutions",
+  description:
+    "Solusi website, hosting, dan VPS terjangkau untuk bisnis dan individu. Buat website cepat, aman, dan modern dengan teknologi terbaik. 🚀",
+  icons: "/bulba.svg",
 };
 
 export default function RootLayout({

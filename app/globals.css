@@ -48,22 +48,22 @@
   }
 
   .dark {
-    --background: 222 84% 4.9%; /* Dark Blue (#1E293B) */
+    --background: 222 47% 11%; /* Darker Blue (#0F172A) */
     --foreground: 210 20% 98%; /* Very Light Blue (#F8FAFC) */
 
-    --card: 222 84% 4.9%;
+    --card: 222 47% 11%; /* Darker Blue (#0F172A) */
     --card-foreground: 210 20% 98%;
 
-    --popover: 222 84% 4.9%;
+    --popover: 222 47% 11%; /* Darker Blue (#0F172A) */
     --popover-foreground: 210 20% 98%;
 
     --primary: 217 91% 60%; /* Bright Blue (#3B82F6) */
     --primary-foreground: 210 20% 98%; /* Very Light Blue */
 
-    --secondary: 222 84% 10%; /* Darker Blue (#1E293B) */
+    --secondary: 222 47% 15%; /* Slightly Lighter Dark Blue (#1E293B) */
     --secondary-foreground: 210 20% 98%; /* Very Light Blue */
 
-    --muted: 222 84% 10%;
+    --muted: 222 47% 15%; /* Slightly Lighter Dark Blue (#1E293B) */
     --muted-foreground: 215 16% 70%; /* Light Gray (#94A3B8) */
 
     --accent: 217 91% 60%; /* Bright Blue (#3B82F6) */
@@ -72,8 +72,8 @@
     --destructive: 0 84% 60%; /* Red (#EF4444) */
     --destructive-foreground: 210 20% 98%; /* Very Light Blue */
 
-    --border: 222 84% 15%; /* Darker Blue (#334155) */
-    --input: 222 84% 15%;
+    --border: 222 47% 20%; /* Darker Blue (#334155) */
+    --input: 222 47% 20%;
     --ring: 217 91% 60%; /* Bright Blue (#3B82F6) */
 
     --chart-1: 12 76% 61%; /* Coral (#FF7F50) */
@@ -89,14 +89,13 @@
     --color-5: 90 100% 63%; /* Lime Green (#84CC16) */
   }
 }
-
 @layer components {
   /* Gradient untuk Card (Nyaru dengan Background) */
   .bg-card-gradient {
     background: linear-gradient(
       145deg,
       hsl(var(--primary) / 0.1) 0%,
-      /* Sangat transparan */ hsl(var(--background) / 0.5) 50%,
+      hsl(var(--background) / 0.5) 50%,
       hsl(var(--background) / 0.8) 100%
     );
     opacity: 1;
@@ -113,7 +112,7 @@
       145deg,
       hsl(var(--primary)) 0%,
       hsl(217, 91%, 70%) 50%,
-      /* Sedikit lebih terang dari primary */ hsl(var(--primary)) 100%
+      hsl(var(--primary)) 100%
     );
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
       0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -125,7 +124,7 @@
       145deg,
       hsl(var(--primary)) 0%,
       hsl(217, 91%, 75%) 50%,
-      /* Lebih terang saat hover */ hsl(var(--primary)) 100%
+      hsl(var(--primary)) 100%
     );
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
       0 4px 6px -2px rgba(0, 0, 0, 0.05);
