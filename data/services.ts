@@ -13,14 +13,14 @@ export const ServicesProducts: Services[] = [
     name: "Layanan Hosting",
     desc: "Hosting stabil dan cepat untuk website, aplikasi, atau game.",
     priceStart: 500000,
-    href: "/hosting",
+    href: "/minecraft-hosting",
   },
   {
     id: 2,
     name: "VPS Berkualitas",
     desc: "VPS handal dengan performa tinggi dan sumber daya dedicated.",
     priceStart: 1500000,
-    href: "/vps",
+    href: "/digital-ocean",
   },
   {
     id: 3,
