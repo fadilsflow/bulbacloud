@@ -1,11 +1,4 @@
-export interface WebsiteServices {
-  id: number
-  name: string
-  desc: string
-  pricestart: number
-  priceNextYear: number
-  specs: string[]
-}
+import { WebsiteServices } from "@/types/website-services";
 
 export const WebsiteServicesProduct: WebsiteServices[] = [
   {
@@ -14,13 +7,15 @@ export const WebsiteServicesProduct: WebsiteServices[] = [
     desc: "Solusi cepat & efisien untuk Anda yang ingin mulai go digital tanpa ribet.",
     pricestart: 999000,
     priceNextYear: 70000,
+    href: "/services/elite",
+    badge: "BEST VALUE",
     specs: [
       "2+ Halaman Responsif",
       "Gratis Domain & Hosting Tahun Pertama",
       "Desain Modern & Mobile-Friendly",
       "Optimasi SEO Dasar",
-      "Pengerjaan 5 Hari"
-    ]
+      "Pengerjaan 5 Hari",
+    ],
   },
   {
     id: 2,
@@ -28,28 +23,33 @@ export const WebsiteServicesProduct: WebsiteServices[] = [
     desc: "Website eksklusif dengan desain premium untuk meningkatkan kredibilitas bisnis Anda.",
     pricestart: 5000000,
     priceNextYear: 140000,
+    href: "/services/professional",
+    badge: "BEST OFFER",
+    featured: true,
     specs: [
       "4+ Halaman Dinamis",
       "Gratis Domain & Hosting Tahun Pertama + Maintenance",
       "Desain Premium & Eksklusif (Custom)",
       "Optimasi SEO & Kecepatan Maksimal",
       "Integrasi WhatsApp & Formulir Kontak",
-      "Pengerjaan 15 Hari"
-    ]
+      "Pengerjaan 15 Hari",
+    ],
   },
-  {
-    id: 3,
-    name: "Advanced",
-    desc: "Solusi khusus untuk bisnis yang membutuhkan fitur custom, mulai dari e-commerce hingga sistem web kompleks.",
-    pricestart: 10000000,
-    priceNextYear: 240000,
-    specs: [
-      "Fitur Full Custom Sesuai Kebutuhan",
-      "Desain UI/UX Eksklusif",
-      "Integrasi API & 3rd Party Services",
-      "Sistem Manajemen Konten (CMS) Jika Dibutuhkan",
-      "Keamanan & Performa Terjamin",
-      "On-Demand Support & Maintenance"
-    ]
-  }
-]
+    {
+      id: 3,
+      name: "Advanced",
+      desc: "Solusi khusus untuk bisnis yang membutuhkan fitur custom, mulai dari e-commerce hingga sistem web kompleks.",
+      pricestart: 10000000,
+      priceNextYear: 240000,
+      href: "/services/advanced",
+      badge: "CUSTOM APPS",
+      specs: [
+        "Fitur Full Custom Sesuai Kebutuhan",
+        "Desain UI/UX Eksklusif",
+        "Integrasi API & 3rd Party Services",
+        "Sistem Manajemen Konten (CMS) Jika Dibutuhkan",
+        "Keamanan & Performa Terjamin",
+        "On-Demand Support & Maintenance",
+      ],
+    },
+];

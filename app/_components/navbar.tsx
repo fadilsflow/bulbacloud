@@ -10,9 +10,6 @@ import {
 } from "@/components/ui/sheet";
 import {
   Menu,
-  Store,
-  ShoppingCart,
-  Settings,
   Users,
   HelpCircle,
   ArrowRight,
@@ -22,7 +19,6 @@ import {
   Briefcase,
   Server,
   Boxes,
-  Globe,
   Database,
   Gamepad,
   BookOpen,
@@ -58,18 +54,18 @@ import {
 import { DialogTitle } from "@radix-ui/react-dialog";
 import { ModeToggle } from "@/components/mode-toggle";
 
-  // Type definitions
-  interface SubMenuItem {
-    label: string;
-    href: string;
-    icon: React.ReactNode;
-    description: string;
-    children?: SubMenuItem[];
-  }
+// Type definitions
+interface SubMenuItem {
+  label: string;
+  href: string;
+  icon: React.ReactNode;
+  description: string;
+  children?: SubMenuItem[];
+}
 
-  interface MenuItem {
-    label: string;
-    href: string;
+interface MenuItem {
+  label: string;
+  href: string;
   submenu: SubMenuItem[];
 }
 
@@ -129,15 +125,13 @@ const menuItems: MenuItem[] = [
   },
   {
     label: "Website Modern",
-    href: "/websites",
-    submenu: [
-    ]
+    href: "/website",
+    submenu: [],
   },
   {
     label: "Domain",
     href: "/domain",
-    submenu: [
-    ],
+    submenu: [],
   },
   {
     label: "Informasi",
@@ -419,7 +413,7 @@ function MenuItem({
           </NavigationMenuContent>
         </>
       ) : (
-          // without submenu
+        // without submenu
         <Link
           href={item.href}
           className={cn(
@@ -549,8 +543,8 @@ export function Navbar() {
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-200 px-10 dark:bg-background border-b ",
         isScrolled
-          ? "bg-background dark:bg-background "
-          : "bg-background dark:bg-background"
+          ? "bg-background dark:bg-background  "
+          : "bg-background dark:bg-background "
       )}
     >
       <div className="container mx-auto px-4 md:px-6">
@@ -614,7 +608,7 @@ export function Navbar() {
             >
               <Link href="/">Daftar</Link>
             </Button> */}
-            
+
             <Button
               variant={"outline"}
               className="px-3 py-1 max-h-7 rounded-md text-xs bg-blue-500 text-white hover:bg-blue-600"

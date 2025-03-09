@@ -20,14 +20,14 @@ export default function OurSolutionsGrid() {
                 <div className="absolute inset-0 bg-card-gradient opacity-100 group-hover:opacity-90 transition-opacity duration-300" />
 
                 <CardHeader className="relative z-10 p-6">
-                  <CardTitle className="-ml-6 text-center text-xl font-semibold text-primary-foreground bg-button-metallic">
+                  <CardTitle className="-ml-6 text-center text-xl font-semibold text-primary-foreground bg-primary">
                     {service.name}
                   </CardTitle>
-                  <CardDescription className="text-muted-foreground mt-2">
+                  <CardDescription className="text-left text-muted-foreground mt-2">
                     {service.desc}
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="relative z-10 p-6 pt-0">
+                <CardContent className="text-left relative z-10 p-6 pt-0">
                   <div className="text-xl font-semibold text-primary">
                     Mulai Dari
                   </div>

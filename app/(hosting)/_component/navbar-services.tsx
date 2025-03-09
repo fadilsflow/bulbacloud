@@ -17,8 +17,8 @@ export default function NavbarService({ services }: NavbarServiceProps) {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-16 w-full z-10 backdrop-blur-sm border-b bg-background dark:bg-background">
-      <nav className=" mx-auto px-4 md:px-6">
+    <header className="sticky top-16 border-t  w-full z-50 border-b bg-background dark:bg-background">
+      <nav className=" mx-auto px-4 md:px-6 bg-background">
         <div className="flex items-center h-16">
           <div className="flex space-x-6 overflow-x-auto no-scrollbar">
             {services.map((service) => {
