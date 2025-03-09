@@ -3,6 +3,7 @@ export interface WebsiteServices {
   name: string
   desc: string
   pricestart: number
+  priceNextYear: number
   specs: string[]
 }
 
@@ -12,6 +13,7 @@ export const WebsiteServicesProduct: WebsiteServices[] = [
     name: "Elite",
     desc: "Solusi cepat & efisien untuk Anda yang ingin mulai go digital tanpa ribet.",
     pricestart: 999000,
+    priceNextYear: 70000,
     specs: [
       "2+ Halaman Responsif",
       "Gratis Domain & Hosting Tahun Pertama",
@@ -25,6 +27,7 @@ export const WebsiteServicesProduct: WebsiteServices[] = [
     name: "Professional",
     desc: "Website eksklusif dengan desain premium untuk meningkatkan kredibilitas bisnis Anda.",
     pricestart: 5000000,
+    priceNextYear: 140000,
     specs: [
       "4+ Halaman Dinamis",
       "Gratis Domain & Hosting Tahun Pertama + Maintenance",
@@ -39,6 +42,7 @@ export const WebsiteServicesProduct: WebsiteServices[] = [
     name: "Advanced",
     desc: "Solusi khusus untuk bisnis yang membutuhkan fitur custom, mulai dari e-commerce hingga sistem web kompleks.",
     pricestart: 10000000,
+    priceNextYear: 240000,
     specs: [
       "Fitur Full Custom Sesuai Kebutuhan",
       "Desain UI/UX Eksklusif",
