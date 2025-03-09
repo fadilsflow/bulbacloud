@@ -128,48 +128,15 @@ const menuItems: MenuItem[] = [
     ],
   },
   {
-    label: "Website",
+    label: "Website Modern",
     href: "/websites",
     submenu: [
-      {
-        label: "Paket Hemat UMKM",
-        href: "/website-hemat-umkm",
-        icon: <Store className="h-4 w-4" />,
-        description:
-          "Pilihan terbaik untuk UMKM dan Yayasan yang baru Go-Digital.",
-      },
-      {
-        label: "Paket Bisnis",
-        href: "/website-bisnis",
-        icon: <Briefcase className="h-4 w-4" />,
-        description:
-          "Website profesional untuk bisnis, portal berita, sekolah, dan portofolio.",
-      },
-      {
-        label: "Paket Toko Online",
-        href: "/website-toko-online",
-        icon: <ShoppingCart className="h-4 w-4" />,
-        description: "Website e-commerce dengan fitur checkout yang fleksibel.",
-      },
-      {
-        label: "Paket Custom Fitur Website",
-        href: "/website-custom-fitur",
-        icon: <Settings className="h-4 w-4" />,
-        description: "Solusi kustom untuk bisnis dengan fitur spesifik.",
-      },
-    ],
+    ]
   },
   {
     label: "Domain",
     href: "/domain",
     submenu: [
-      {
-        label: "Domain + Cloudflare & Google Account",
-        href: "/domain",
-        icon: <Globe className="h-4 w-4" />,
-        description:
-          "Domain siap pakai, sudah di Cloudflare & dilengkapi akun Google baru.",
-      },
     ],
   },
   {
@@ -452,10 +419,11 @@ function MenuItem({
           </NavigationMenuContent>
         </>
       ) : (
+          // without submenu
         <Link
           href={item.href}
           className={cn(
-            "text-sm font-medium transition-colors",
+            "text-sm font-bold transition-colors p-4",
             pathname === item.href ? "text-blue-500" : "hover:text-blue-500"
           )}
         >
