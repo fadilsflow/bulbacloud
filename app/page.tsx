@@ -2,6 +2,7 @@
 import Features from "./_components/Features";
 import Hero from "./_components/Hero";
 import ServicesSection from "./_components/Services";
+import Testimoni from "./_components/Testimoni";
 
 // import { WebsiteServicesProduct } from "@/data/WebsiteServicesProduct";
 // import ServicePricingGrid from "@/components/ServicePricingGrid";
@@ -17,6 +18,8 @@ export default function Home() {
        */}
        <Features/>
        <ServicesSection/>
+       <Testimoni/>
+       
     </div>
   );
 }

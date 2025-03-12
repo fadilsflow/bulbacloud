@@ -3,17 +3,45 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import OurSolutionsGrid from "./OurSolutionsGrid";
+import { AvatarCircles } from "@/components/magicui/avatar-circles";
 
 const Hero = () => {
+  const avatars = [
+    {
+      imageUrl: "https://avatars.githubusercontent.com/u/16860528",
+      profileUrl: "https://github.com/dillionverma",
+    },
+    {
+      imageUrl: "https://avatars.githubusercontent.com/u/20110627",
+      profileUrl: "https://github.com/tomonarifeehan",
+    },
+    {
+      imageUrl: "https://avatars.githubusercontent.com/u/106103625",
+      profileUrl: "https://github.com/BankkRoll",
+    },
+    {
+      imageUrl: "https://avatars.githubusercontent.com/u/59228569",
+      profileUrl: "https://github.com/safethecode",
+    },
+    {
+      imageUrl: "https://avatars.githubusercontent.com/u/59442788",
+      profileUrl: "https://github.com/sanjay-mali",
+    },
+    {
+      imageUrl: "https://avatars.githubusercontent.com/u/89768406",
+      profileUrl: "https://github.com/itsarghyadas",
+    },
+  ];
   return (
     <section className="min-h-screen relative  mx-auto px-4 pt-8 sm:pt-12 md:pt-12 text-center">
       {/* Background Grid Pattern */}
+
       <GridPattern
-        width={100}
-        height={100}
+        width={80}
+        height={80}
         x={-1}
         y={-1}
-        strokeDasharray={"10 2"}
+        strokeDasharray={"10  1"}
         className={cn(
           "[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]"
         )}
@@ -29,7 +57,7 @@ const Hero = () => {
       </div>
 
       {/* Main Headline */}
-      <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold mt-4 text-foreground">
+      <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-normal mt-4 text-foreground">
         Simple & Reliable Digital Solutions
       </h1>
 
@@ -61,6 +89,7 @@ const Hero = () => {
         </Button>
       </div>
       <OurSolutionsGrid />
+      <AvatarCircles numPeople={99} avatarUrls={avatars} />
     </section>
   );
 };

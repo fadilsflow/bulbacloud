@@ -614,7 +614,7 @@ export function Navbar() {
               className="px-3 py-1 max-h-7 rounded-md text-xs bg-blue-500 text-white hover:bg-blue-600"
               asChild
             >
-              <Link href="/">Dashboard</Link>
+              <Link href="/">Login</Link>
             </Button>
 
             {/* Mobile Menu */}

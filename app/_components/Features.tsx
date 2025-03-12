@@ -42,11 +42,14 @@ export default function Features() {
       <div className="container px-4 md:px-6 mx-auto">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <Badge variant="outline" className="mb-2 rounded-full">
+            <Badge
+              variant="outline"
+              className="mb-2 bg-primary/20 text-primary rounded-full"
+            >
               Keunggulan Kami
             </Badge>
-            <h2 className="text-3xl font-semibold tracking-tighter md:text-4xl">
-              Solusi Digital Terpercaya untuk Bisnis Anda
+            <h2 className="text-3xl font-normal tracking-tighter md:text-4xl">
+              Cepat. Andal. Efisien.
             </h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl">
               Hosting, VPS, Website, dan Domain untuk mendukung pertumbuhan
