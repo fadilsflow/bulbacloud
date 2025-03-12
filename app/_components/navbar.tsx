@@ -579,6 +579,7 @@ export function Navbar() {
               href={"https://discord.gg/4Z6JUZv"}
               target="_blank"
               rel="noopener noreferrer"
+              className="hidden md:flex"
             >
               <Image
                 src="/discord.svg"
@@ -592,6 +593,7 @@ export function Navbar() {
               href={"https://instagram.com"}
               target="_blank"
               rel="noopener noreferrer"
+              className="hidden md:flex"
             >
               <Image
                 src="/instagram.svg"

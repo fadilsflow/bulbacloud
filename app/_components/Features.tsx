@@ -46,7 +46,7 @@ export default function Features() {
               variant="outline"
               className="mb-2 bg-primary/20 text-primary rounded-full"
             >
-              Keunggulan Kami
+              Our Advantages
             </Badge>
             <h2 className="text-3xl font-normal tracking-tighter md:text-4xl">
               Cepat. Andal. Efisien.

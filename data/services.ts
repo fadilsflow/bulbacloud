@@ -1,39 +1,54 @@
-// data/services.ts
-
-export interface Services {
-  id: number;
-  name: string;
-  desc: string;
-  priceStart: number;
-  href: string;
-}
-export const ServicesProducts: Services[] = [
+export const ServicesProducts = [
   {
     id: 1,
     name: "Layanan Hosting",
-    desc: "Hosting stabil dan cepat untuk website, aplikasi, atau game.",
+    specs: [
+      "Hosting stabil dan cepat",
+      "Dukungan website, aplikasi, dan game",
+      "Garansi uptime 99.9%",
+      "Scalable resources",
+    ],
     priceStart: 500000,
     href: "/minecraft-hosting",
+    bgColor: "bg-primary/10", // Warna latar belakang
   },
   {
     id: 2,
     name: "VPS Berkualitas",
-    desc: "VPS handal dengan performa tinggi dan sumber daya dedicated.",
+    specs: [
+      "Performansi tinggi",
+      "Sumber daya dedicated",
+      "Full root access",
+      "Dukungan 24/7",
+    ],
     priceStart: 1500000,
     href: "/digital-ocean",
+    bgColor: "bg-secondary/10", // Warna latar belakang
   },
   {
     id: 3,
     name: "Website Modern",
-    desc: "Website cepat, modern, dan responsif untuk bisnis atau personal.",
+    specs: [
+      "Desain responsif",
+      "Optimasi SEO",
+      "Integrasi dengan CMS populer",
+      "Dukungan teknis penuh",
+    ],
     priceStart: 625000,
     href: "/website",
+    bgColor: "bg-primary/10", // Warna latar belakang
   },
   {
     id: 4,
     name: "Domain Premium",
-    desc: "Domain siap pakai dengan proteksi Cloudflare dan Google Account.",
+    specs: [
+      "Domain siap pakai",
+      "Proteksi Cloudflare",
+      "Integrasi Google Account",
+      "Manajemen DNS mudah",
+    ],
     priceStart: 10000,
     href: "/domain",
+    bgColor: "bg-secondary/10", // Warna latar belakang
   },
 ];

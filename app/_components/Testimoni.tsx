@@ -32,7 +32,8 @@ export default function Testimoni() {
                 target="_blank"
                 className={buttonVariants({
                   variant: "outline",
-                  className: "gap-2 rounded-full",
+                  className:
+                    "shadow-xl inline-flex items-center gap-2 text-sm hover:border-black/20  hover:bg-background hover:text-foreground sm:text-base",
                 })}
               >
                 Whatsapp Community
@@ -43,7 +44,8 @@ export default function Testimoni() {
                 target="_blank"
                 className={buttonVariants({
                   variant: "outline",
-                  className: "gap-2 rounded-full",
+                  className:
+                    "shadow-xl inline-flex items-center gap-2 text-sm hover:border-black/20  hover:bg-background hover:text-foreground sm:text-base",
                 })}
               >
                 Discord Community

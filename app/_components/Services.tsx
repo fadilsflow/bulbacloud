@@ -7,20 +7,17 @@ import Link from "next/link";
 
 export default function Services() {
   return (
-    <section
-      id="services"
-      className="w-full min-h-screen flex items-center justify-center bg-background py-12"
-    >
+    <section className="w-full min-h-screen flex items-center justify-center bg-background py-12">
       <div className="container px-4 md:px-6 mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
           <Badge variant="outline" className="mb-4 rounded-full bg-primary/20">
             <Badge variant="default" className="rounded-full mr-2 -ml-2">
-              Baru
+              New
             </Badge>
-            Layanan Kami
+            Our Services
           </Badge>
-          <h2 className="text-3xl font-normal tracking-tighter sm:text-4xl md:text-5xl">
+          <h2 className="text-3xl font-normal tracking-tighter sm:text-4xl md:text-4xl">
             Layanan Terbaik untuk Kebutuhan Digital Anda
           </h2>
           <p className="max-w-[900px] text-muted-foreground md:text-xl mt-4 mx-auto">

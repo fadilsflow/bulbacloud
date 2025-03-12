@@ -1,6 +1,7 @@
 // import WebsiteServicesPricingGrid from "@/components/website-services-pricing-grid";
 import Features from "./_components/Features";
 import Hero from "./_components/Hero";
+import { PricingSection } from "./_components/Pricing";
 import ServicesSection from "./_components/Services";
 import Testimoni from "./_components/Testimoni";
 
@@ -16,10 +17,10 @@ export default function Home() {
       {/* <ServicePricingGrid services={vpsDigitalOceanProducts}/> */}
       {/* <WhatWeDo/>
        */}
-       <Features/>
-       <ServicesSection/>
-       <Testimoni/>
-       
+      <Features />
+      <ServicesSection />
+      <PricingSection />
+      <Testimoni />
     </div>
   );
 }
