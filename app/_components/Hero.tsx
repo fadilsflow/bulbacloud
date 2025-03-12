@@ -6,7 +6,7 @@ import OurSolutionsGrid from "./OurSolutionsGrid";
 
 const Hero = () => {
   return (
-    <section className="relative  mx-auto px-4 pt-8 sm:pt-12 md:pt-12 text-center">
+    <section className="min-h-screen relative  mx-auto px-4 pt-8 sm:pt-12 md:pt-12 text-center">
       {/* Background Grid Pattern */}
       <GridPattern
         width={100}
