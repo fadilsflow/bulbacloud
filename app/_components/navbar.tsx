@@ -574,7 +574,7 @@ export function Navbar() {
           </div>
 
           <div className="flex items-center gap-4">
-            <ModeToggle />
+            
             <Link
               href={"https://discord.gg/4Z6JUZv"}
               target="_blank"
@@ -596,6 +596,20 @@ export function Navbar() {
               className="hidden md:flex"
             >
               <Image
+                src="/whatsapp.svg"
+                alt="Instagram Logo"
+                width={18}
+                height={18}
+                className="dark:invert opacity-75 hover:opacity-100 transition-all duration-300 "
+              />
+            </Link> 
+            <Link
+              href={"https://instagram.com"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:flex"
+            >
+              <Image
                 src="/instagram.svg"
                 alt="Instagram Logo"
                 width={18}
@@ -603,6 +617,7 @@ export function Navbar() {
                 className="dark:invert opacity-75 hover:opacity-100 transition-all duration-300 "
               />
             </Link>
+            <ModeToggle />
             {/* <Button
               variant={"secondary"}
               className="px-3 py-1 max-h-7 rounded-md text-xs "
@@ -611,13 +626,13 @@ export function Navbar() {
               <Link href="/">Daftar</Link>
             </Button> */}
 
-            <Button
+            {/* <Button
               variant={"outline"}
               className="px-3 py-1 max-h-7 rounded-md text-xs bg-blue-500 text-white hover:bg-blue-600"
               asChild
             >
               <Link href="/">Login</Link>
-            </Button>
+            </Button> */}
 
             {/* Mobile Menu */}
             <MobileMenu
