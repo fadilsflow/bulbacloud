@@ -8,8 +8,8 @@ export const ServicesProducts = [
       "Garansi uptime 99.9%",
       "Scalable resources",
     ],
-    priceStart: 500000,
-    href: "/minecraft-hosting",
+    priceStart: 40000,
+    href: "/hosting-minecraft",
     bgColor: "bg-primary/10", // Warna latar belakang
   },
   {
@@ -21,8 +21,8 @@ export const ServicesProducts = [
       "Full root access",
       "Dukungan 24/7",
     ],
-    priceStart: 1500000,
-    href: "/digital-ocean",
+    priceStart: 50000,
+    href: "/vps-dedicated-indonesia",
     bgColor: "bg-secondary/10", // Warna latar belakang
   },
   {
@@ -34,8 +34,8 @@ export const ServicesProducts = [
       "Integrasi dengan CMS populer",
       "Dukungan teknis penuh",
     ],
-    priceStart: 625000,
-    href: "/website",
+    priceStart: 99000,
+    href: "/solusi-website-terbaik",
     bgColor: "bg-primary/10", // Warna latar belakang
   },
   {
@@ -47,8 +47,8 @@ export const ServicesProducts = [
       "Integrasi Google Account",
       "Manajemen DNS mudah",
     ],
-    priceStart: 10000,
-    href: "/domain",
+    priceStart: 15000,
+    href: "/domain-murah",
     bgColor: "bg-secondary/10", // Warna latar belakang
   },
 ];
