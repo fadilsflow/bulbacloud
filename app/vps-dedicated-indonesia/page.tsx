@@ -1,3 +1,5 @@
+
+
 import { PricingHeader } from "@/app/_components/PricingHeader";
 import ServicesPricingGrid from "@/components/ServicePricingGrid";
 import { minecraftProduct } from "@/data/minecraft-hosting";
@@ -9,13 +11,13 @@ export default function Page() {
       <div className="mx-auto max-w-screen-xl  px-10 sm:px-6 lg:px-36">
         {/* PricingHeader dengan margin bawah */}
         <PricingHeader
-          title=" Main Makin Seru dengan Minecraft Server"
+          title="VPS Terkuat di Indonesia dengan harga Murah"
           spec={[
             "Unlimited Player Slots",
             "Dedicated IP Address",
             "24/7 Server Monitoring",
           ]}
-          price="45.000"
+          price="80.000"
           period="/bulan"
           headerBadge="Server Uptime"
           SubHeaderBadge="99.9%"
@@ -30,7 +32,7 @@ export default function Page() {
         />
 
         <ServicesPricingGrid
-          services={minecraftProduct}
+          services={vpsProduct}
           titleServices="Pilih Paket Minecraft Server Hosting"
           className="mt-8"
         />
