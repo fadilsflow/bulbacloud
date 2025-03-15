@@ -27,8 +27,8 @@ export default function Page() {
           SubHeaderBadge="Professional & Cepat"
           ctaText="Pilih Paket"
           ctaHref="#product"
-          imageSrc="/vps-dedicated-indonesia.png"
-          imageAlt="Ilustrasi website modern"
+          imageSrc="/website.png"
+          imageAlt="modern website"
           className="mb-8"
         />
 

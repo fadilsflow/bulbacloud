@@ -51,7 +51,7 @@ export default function Services() {
               </div>
               <div className="md:w-1/2 relative h-full min-h-64">
                 <Image
-                  src="/bulba.svg"
+                  src="/website.png"
                   alt="Logo Bulba"
                   fill
                   className="object-cover"
