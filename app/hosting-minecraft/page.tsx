@@ -12,8 +12,8 @@ export default function Page() {
           title=" Main Makin Seru dengan Minecraft Server"
           spec={[
             "Unlimited Player Slots",
-            "Dedicated IP Address",
-            "24/7 Server Monitoring",
+            "Dedicated Resources",
+            "NVMe SSD Storage",
           ]}
           price="45.000"
           period="/bulan"

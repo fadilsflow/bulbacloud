@@ -1,55 +1,60 @@
-import { WebsiteServices } from "@/types/website-services";
+export interface WebsiteServiceTypes {
+  id: number;
+  name: string;
+  desc: string;
+  pricestart: number;
+  priceNextYear: number;
+  specs: string[];
+  featured?: boolean;
+  badge?: string;
+  allFeature?: string[];
+}
 
-export const WebsiteServicesProduct: WebsiteServices[] = [
+export const WebsiteServicesProduct: WebsiteServiceTypes[] = [
   {
     id: 1,
     name: "Elite",
-    desc: "Solusi cepat & efisien untuk Anda yang ingin mulai go digital tanpa ribet.",
+    desc: "Solusi cepat dan efisien untuk memulai transformasi digital, ideal bagi UMKM yang ingin tampil modern dengan biaya terjangkau.",
     pricestart: 999000,
     priceNextYear: 70000,
-    href: "/services/elite",
     badge: "BEST VALUE",
     specs: [
-      "2+ Halaman Responsif",
+      "2+ Halaman Web Responsif",
       "Gratis Domain & Hosting Tahun Pertama",
-      "Desain Modern & Mobile-Friendly",
+      "Desain Modern dan Mobile-Friendly",
       "Optimasi SEO Dasar",
-      "Pengerjaan 5 Hari",
+      "Pengerjaan dalam 5 Hari",
     ],
   },
   {
     id: 2,
     name: "Professional",
-    desc: "Website eksklusif dengan desain premium untuk meningkatkan kredibilitas bisnis Anda.",
+    desc: "Website eksklusif dengan desain premium yang meningkatkan kredibilitas bisnis serta memaksimalkan kehadiran digital guna mendukung pertumbuhan optimal.",
     pricestart: 5000000,
     priceNextYear: 140000,
-    href: "/services/professional",
     badge: "BEST OFFER",
     featured: true,
     specs: [
       "4+ Halaman Dinamis",
-      "Gratis Domain & Hosting Tahun Pertama + Maintenance",
-      "Desain Premium & Eksklusif (Custom)",
-      "Optimasi SEO & Kecepatan Maksimal",
-      "Integrasi WhatsApp & Formulir Kontak",
-      "Pengerjaan 15 Hari",
+      "Gratis Domain, Hosting, dan Maintenance",
+      "Desain Premium dan Custom Eksklusif",
+      "Optimasi SEO Lanjutan dan Kecepatan Maksimal",
+      "Pengerjaan dalam 15 Hari",
     ],
   },
-    {
-      id: 3,
-      name: "Advanced",
-      desc: "Solusi khusus untuk bisnis yang membutuhkan fitur custom, mulai dari e-commerce hingga sistem web kompleks.",
-      pricestart: 10000000,
-      priceNextYear: 240000,
-      href: "/services/advanced",
-      badge: "CUSTOM APPS",
-      specs: [
-        "Fitur Full Custom Sesuai Kebutuhan",
-        "Desain UI/UX Eksklusif",
-        "Integrasi API & 3rd Party Services",
-        "Sistem Manajemen Konten (CMS) Jika Dibutuhkan",
-        "Keamanan & Performa Terjamin",
-        "On-Demand Support & Maintenance",
-      ],
-    },
+  {
+    id: 3,
+    name: "Advanced",
+    desc: "Solusi komprehensif untuk bisnis yang membutuhkan fitur kustom lengkap, mulai dari e-commerce hingga sistem web kompleks dengan dukungan optimal.",
+    pricestart: 10000000,
+    priceNextYear: 240000,
+    badge: "CUSTOM APPS",
+    specs: [
+      "Fitur Custom Sesuai Kebutuhan",
+      "Desain UI/UX Eksklusif dan Responsif",
+      "Integrasi API dan Layanan Pihak Ketiga",
+      "Keamanan dan Performa Terjamin",
+      "Dukungan On-Demand dan Maintenance",
+    ],
+  },
 ];

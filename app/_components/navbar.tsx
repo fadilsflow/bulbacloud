@@ -13,12 +13,10 @@ import {
 import {
   Menu,
   Users,
-  HelpCircle,
   ArrowRight,
   Star,
   MessageSquare,
   MessageCircle,
-  Briefcase,
   Gamepad,
   BookOpen,
   Cloud,
@@ -27,7 +25,6 @@ import {
   Phone,
   Headphones,
   Handshake,
-  FileText,
   ChevronRight,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -135,18 +132,18 @@ const menuItems: MenuItem[] = [
         icon: <BookOpen className="h-4 w-4" />,
         description: "Baca artikel dan panduan terbaru.",
         children: [
-          {
-            label: "Blog",
-            href: "/blog",
-            icon: <FileText className="h-4 w-4" />,
-            description: "Artikel terbaru tentang bisnis & teknologi.",
-          },
-          {
-            label: "Guides",
-            href: "/guides",
-            icon: <HelpCircle className="h-4 w-4" />,
-            description: "Panduan lengkap untuk layanan kami.",
-          },
+          // {
+          //   label: "Blog",
+          //   href: "/blog",
+          //   icon: <FileText className="h-4 w-4" />,
+          //   description: "Artikel terbaru tentang bisnis & teknologi.",
+          // },
+          // {
+          //   label: "Guides",
+          //   href: "/guides",
+          //   icon: <HelpCircle className="h-4 w-4" />,
+          //   description: "Panduan lengkap untuk layanan kami.",
+          // },
           {
             label: "FAQ",
             href: "/faq",
@@ -167,18 +164,18 @@ const menuItems: MenuItem[] = [
             icon: <Target className="h-4 w-4" />,
             description: "Tujuan dan nilai utama yang kami pegang.",
           },
-          {
-            label: "Tim Kami",
-            href: "/team",
-            icon: <Users className="h-4 w-4" />,
-            description: "Kenali orang-orang di balik startup kami.",
-          },
-          {
-            label: "Karir",
-            href: "/careers",
-            icon: <Briefcase className="h-4 w-4" />,
-            description: "Bergabung dengan tim kami dan berkembang bersama.",
-          },
+          // {
+          //   label: "Tim Kami",
+          //   href: "/team",
+          //   icon: <Users className="h-4 w-4" />,
+          //   description: "Kenali orang-orang di balik startup kami.",
+          // },
+          // {
+          //   label: "Karir",
+          //   href: "/careers",
+          //   icon: <Briefcase className="h-4 w-4" />,
+          //   description: "Bergabung dengan tim kami dan berkembang bersama.",
+          // },
         ],
       },
       {

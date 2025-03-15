@@ -66,7 +66,7 @@ export default function ServicesPricingGrid({
               key={service.id}
               className={cn(
                 "h-full flex flex-col rounded-lg border shadow-sm transition-all duration-300 hover:shadow-md relative overflow-hidden",
-                service.featured ? "border-primary shadow-lg" : "border-border"
+                service.featured ? "border-primary bg-primary/10 shadow-lg" : "border-border"
               )}
             >
               {/* Featured Tag - Centered at the top */}

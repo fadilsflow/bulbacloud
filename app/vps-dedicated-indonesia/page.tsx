@@ -6,29 +6,29 @@ export default function Page() {
   return (
     <main className="bg-background w-full my-auto pt-8 sm:pt-12 md:pt-12">
       {/* Container untuk membatasi lebar konten */}
-      <div className="mx-auto max-w-screen-xl  px-10 sm:px-6 lg:px-36">
+      <div className="mx-auto max-w-screen-xl px-10 sm:px-6 lg:px-36">
         {/* PricingHeader dengan margin bawah */}
         <PricingHeader
-          title="VPS Terkuat di Indonesia dengan harga Murah"
+          title="VPS Terkuat di Indonesia dengan Harga Terjangkau"
           spec={[
-            "Unlimited Player Slots",
-            "Dedicated IP Address",
-            "24/7 Server Monitoring",
+            "Dedicated Resources",
+            "NVMe SSD Storage",
+            "Prosesor AMD EPYC",
           ]}
-          price="80.000"
+          price="50.000"
           period="/bulan"
-          headerBadge="Server Uptime"
-          SubHeaderBadge="99.9%"
+          headerBadge="Performa Unggul"
+          SubHeaderBadge="Terpercaya & Stabil"
           ctaText="Pilih Paket"
           ctaHref="#product"
           imageSrc="/vps-dedicated-indonesia.svg"
-          imageAlt="Valheim game server illustration"
+          imageAlt="VPS Dedicated Indonesia"
           className="mb-8"
         />
 
         <ServicesPricingGrid
           services={vpsDedicatedIndonesia}
-          titleServices="Pilih Paket Minecraft Server Hosting"
+          titleServices="Pilih Paket VPS Dedicated Indonesia"
           className="mt-8"
         />
       </div>

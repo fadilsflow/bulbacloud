@@ -157,8 +157,8 @@ export function PricingSection() {
     }
   };
 
-  const table = useReactTable({
-    data: getData(),
+  const table = useReactTable<Product>({
+    data: getData() as Product[],
     columns,
     onSortingChange: setSorting,
     getCoreRowModel: getCoreRowModel(),
