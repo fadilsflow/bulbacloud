@@ -34,7 +34,7 @@ export const ServicesProducts = [
       "Integrasi dengan CMS populer",
       "Dukungan teknis penuh",
     ],
-    priceStart: 99000,
+    priceStart: 999000,
     href: "/solusi-website-terbaik",
     bgColor: "bg-primary/10", // Warna latar belakang
   },
