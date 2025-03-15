@@ -17,13 +17,9 @@ import {
   MessageSquare,
   MessageCircle,
   Briefcase,
-  Server,
-  Boxes,
-  Database,
   Gamepad,
   BookOpen,
   Cloud,
-  Cpu,
   InfoIcon,
   Target,
   Phone,
@@ -76,53 +72,47 @@ const menuItems: MenuItem[] = [
     href: "/hosting",
     submenu: [
       {
+        label: "VPS Hosting Dedicated Indonesia",
+        href: "/cloud-hosting",
+        icon: <Cloud className="h-4 w-4" />,
+        description: "Hosting fleksibel dan scalable berbasis cloud.",
+      },
+      {
         label: "Minecraft Hosting",
         href: "/minecraft-hosting",
         icon: <Gamepad className="h-4 w-4" />,
         description:
           "Server Minecraft dengan performa tinggi dan harga terjangkau.",
       },
+
       {
-        label: "Docker Hosting",
-        href: "/docker-hosting",
-        icon: <Boxes className="h-4 w-4" />,
-        description: "Deploy aplikasi berbasis Docker dengan cepat dan stabil.",
-      },
-      {
-        label: "Database Hosting",
-        href: "/database-hosting",
-        icon: <Database className="h-4 w-4" />,
-        description:
-          "Hosting database dengan performa tinggi (MySQL, PostgreSQL, MongoDB).",
-      },
-      {
-        label: "Cloud Hosting",
+        label: "VPS Digital Ocean",
         href: "/cloud-hosting",
         icon: <Cloud className="h-4 w-4" />,
         description: "Hosting fleksibel dan scalable berbasis cloud.",
       },
     ],
   },
-  {
-    label: "VPS",
-    href: "/vps",
-    submenu: [
-      {
-        label: "VPS Digital Ocean",
-        href: "/digital-ocean",
-        icon: <Server className="h-4 w-4" />,
-        description:
-          "VPS berbasis cloud dengan performa tinggi dari Digital Ocean.",
-      },
-      {
-        label: "VPS Dedicated Indonesia",
-        href: "/dedicated-indonesia",
-        icon: <Cpu className="h-4 w-4" />,
-        description:
-          "VPS berbasis KVM di Indonesia dengan sumber daya penuh dan stabilitas terbaik.",
-      },
-    ],
-  },
+  // {
+  //   label: "VPS",
+  //   href: "/vps",
+  //   submenu: [
+  //     {
+  //       label: "VPS Digital Ocean",
+  //       href: "/digital-ocean",
+  //       icon: <Server className="h-4 w-4" />,
+  //       description:
+  //         "VPS berbasis cloud dengan performa tinggi dari Digital Ocean.",
+  //     },
+  //     {
+  //       label: "VPS Dedicated Indonesia",
+  //       href: "/dedicated-indonesia",
+  //       icon: <Cpu className="h-4 w-4" />,
+  //       description:
+  //         "VPS berbasis KVM di Indonesia dengan sumber daya penuh dan stabilitas terbaik.",
+  //     },
+  //   ],
+  // },
   {
     label: "Website Modern",
     href: "/website",
@@ -574,7 +564,6 @@ export function Navbar() {
           </div>
 
           <div className="flex items-center gap-4">
-            
             <Link
               href={"https://discord.gg/4Z6JUZv"}
               target="_blank"
@@ -602,7 +591,7 @@ export function Navbar() {
                 height={18}
                 className="dark:invert opacity-75 hover:opacity-100 transition-all duration-300 "
               />
-            </Link> 
+            </Link>
             <Link
               href={"https://instagram.com"}
               target="_blank"

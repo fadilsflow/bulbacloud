@@ -15,7 +15,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useState } from "react";
-import { title } from "process";
 
 interface ServicePricingGridProps {
   services: ServiceTypes[];
