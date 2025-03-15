@@ -1,5 +1,5 @@
 import { ServiceTypes } from "@/types/services-types";
-export const vpsDedicatedIndonesia: ServiceTypes[] = [
+export const vpsDigitalOcean: ServiceTypes[] = [
   {
     id: 1,
     name: "VPS Digital Ocean I",

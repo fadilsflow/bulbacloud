@@ -1,6 +1,6 @@
 import { PricingHeader } from "@/app/_components/PricingHeader";
 import ServicesPricingGrid from "@/components/ServicePricingGrid";
-import { minecraftProduct } from "@/data/minecraft-hosting";
+import { vpsDigitalOcean } from "@/data/vps-digital-ocean";
 
 export default function Page() {
   return (
@@ -19,9 +19,6 @@ export default function Page() {
           period="/bulan"
           headerBadge="Server Uptime"
           SubHeaderBadge="99.9%"
-          serverName="VikingRealm"
-          serverSpec="32GB"
-          serverUptime="99.8%"
           ctaText="Pilih Paket"
           ctaHref="#minecraft-product"
           imageSrc="/minecraft-cover.png"
@@ -30,7 +27,7 @@ export default function Page() {
         />
 
         <ServicesPricingGrid
-          services={minecraftProduct}
+          services={vpsDigitalOcean}
           titleServices="Pilih Paket Minecraft Server Hosting"
           className="mt-8"
         />

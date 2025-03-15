@@ -1,5 +1,7 @@
 "use client";
 
+import type React from "react";
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -27,6 +29,7 @@ import {
   Handshake,
   FileText,
   ChevronRight,
+  X,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
@@ -47,8 +50,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { DialogTitle } from "@radix-ui/react-dialog";
 import { ModeToggle } from "@/components/mode-toggle";
+import { DialogTitle } from "@/components/ui/dialog";
 
 // Type definitions
 interface SubMenuItem {
@@ -73,13 +76,13 @@ const menuItems: MenuItem[] = [
     submenu: [
       {
         label: "VPS Hosting Dedicated Indonesia",
-        href: "/cloud-hosting",
+        href: "/vps-dedicated-indonesia",
         icon: <Cloud className="h-4 w-4" />,
         description: "Hosting fleksibel dan scalable berbasis cloud.",
       },
       {
         label: "Minecraft Hosting",
-        href: "/minecraft-hosting",
+        href: "/hosting-minecraft",
         icon: <Gamepad className="h-4 w-4" />,
         description:
           "Server Minecraft dengan performa tinggi dan harga terjangkau.",
@@ -87,35 +90,15 @@ const menuItems: MenuItem[] = [
 
       {
         label: "VPS Digital Ocean",
-        href: "/cloud-hosting",
+        href: "/vps-digital-ocean",
         icon: <Cloud className="h-4 w-4" />,
         description: "Hosting fleksibel dan scalable berbasis cloud.",
       },
     ],
   },
-  // {
-  //   label: "VPS",
-  //   href: "/vps",
-  //   submenu: [
-  //     {
-  //       label: "VPS Digital Ocean",
-  //       href: "/digital-ocean",
-  //       icon: <Server className="h-4 w-4" />,
-  //       description:
-  //         "VPS berbasis cloud dengan performa tinggi dari Digital Ocean.",
-  //     },
-  //     {
-  //       label: "VPS Dedicated Indonesia",
-  //       href: "/dedicated-indonesia",
-  //       icon: <Cpu className="h-4 w-4" />,
-  //       description:
-  //         "VPS berbasis KVM di Indonesia dengan sumber daya penuh dan stabilitas terbaik.",
-  //     },
-  //   ],
-  // },
   {
-    label: "Website Modern",
-    href: "/website",
+    label: "Solusi Website Terbaik",
+    href: "/solusi-website-terbaik",
     submenu: [],
   },
   {
@@ -223,7 +206,6 @@ const menuItems: MenuItem[] = [
   },
 ];
 
-// MenuItem Component for Mobile View
 function MobileMenuItem({
   item,
   pathname,
@@ -240,10 +222,10 @@ function MobileMenuItem({
         <div className="flex flex-col">
           <button
             className={cn(
-              "flex items-center justify-between w-full px-4 py-2 text-sm transition-colors rounded-md",
+              "flex items-center justify-between w-full px-4 py-2 text-sm transition-colors",
               pathname === item.href
-                ? "text-blue-500 bg-blue-50 dark:bg-blue-950/20"
-                : "text-foreground/80 hover:bg-accent hover:text-primary"
+                ? "text-blue-500"
+                : "text-foreground/80 hover:text-blue-500"
             )}
             onClick={() => setIsOpen(!isOpen)}
           >
@@ -261,45 +243,46 @@ function MobileMenuItem({
 
           {/* Children submenu */}
           {isOpen && (
-            <div className="flex flex-col gap-1 pl-8 mt-1 mb-2">
+            <div className="flex flex-col space-y-1 pl-8 mt-1 mb-2">
               {item.children.map((child) => (
-                <Link
-                  key={child.label}
-                  href={child.href}
-                  className={cn(
-                    "flex items-center gap-2 px-4 py-2 text-xs transition-colors rounded-md",
-                    pathname === child.href
-                      ? "text-blue-500 bg-blue-50 dark:bg-blue-950/20"
-                      : "text-foreground/80 hover:bg-accent hover:text-primary"
-                  )}
-                >
-                  {child.icon}
-                  <span>{child.label}</span>
-                </Link>
+                <SheetClose key={child.label} asChild>
+                  <Link
+                    href={child.href}
+                    className={cn(
+                      "flex items-center gap-2 px-4 py-2 text-xs transition-colors",
+                      pathname === child.href
+                        ? "text-blue-500"
+                        : "text-foreground/80 hover:text-blue-500"
+                    )}
+                  >
+                    {child.icon}
+                    <span>{child.label}</span>
+                  </Link>
+                </SheetClose>
               ))}
             </div>
           )}
         </div>
       ) : (
         // Item without children
-        <Link
-          href={item.href}
-          className={cn(
-            "flex items-center gap-2 px-4 py-2 text-sm transition-colors rounded-md",
-            pathname === item.href
-              ? "text-blue-500 bg-blue-50 dark:bg-blue-950/20"
-              : "text-foreground/80 hover:bg-accent hover:text-primary"
-          )}
-        >
-          {item.icon}
-          <span>{item.label}</span>
-        </Link>
+        <SheetClose asChild>
+          <Link
+            href={item.href}
+            className={cn(
+              "flex items-center gap-2 px-4 py-2 text-sm transition-colors",
+              pathname === item.href
+                ? "text-blue-500"
+                : "text-foreground/80 hover:text-blue-500"
+            )}
+          >
+            {item.icon}
+            <span>{item.label}</span>
+          </Link>
+        </SheetClose>
       )}
     </div>
   );
 }
-
-// MenuItem Component - handles both desktop and mobile menu items
 function MenuItem({
   item,
   pathname,
@@ -312,26 +295,46 @@ function MenuItem({
   // Render for mobile view
   if (isMobile) {
     return (
-      <AccordionItem value={item.label}>
-        <AccordionTrigger className="text-sm font-medium">
-          {item.label}
-        </AccordionTrigger>
-        <AccordionContent>
-          <div className="flex flex-col gap-2 pl-4">
-            {item.submenu.map((subItem) => (
-              <MobileMenuItem
-                key={subItem.label}
-                item={subItem}
-                pathname={pathname}
-              />
-            ))}
-          </div>
-        </AccordionContent>
-      </AccordionItem>
+      <>
+        {item.submenu && item.submenu.length > 0 ? (
+          // Item with submenu (use Accordion)
+          <AccordionItem value={item.label} className="border-b-0">
+            <AccordionTrigger className="py-3 px-4 text-sm font-medium hover:no-underline">
+              {item.label}
+            </AccordionTrigger>
+            <AccordionContent className="pb-1">
+              <div className="flex flex-col space-y-1 pl-4">
+                {item.submenu.map((subItem) => (
+                  <MobileMenuItem
+                    key={subItem.label}
+                    item={subItem}
+                    pathname={pathname}
+                  />
+                ))}
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+        ) : (
+          // Item without submenu (simple Link)
+          <SheetClose asChild>
+            <Link
+              href={item.href}
+              className={cn(
+                "flex items-center py-3 px-4 text-sm font-medium transition-colors",
+                pathname === item.href
+                  ? "text-blue-500 bg-blue-50 dark:bg-blue-950/20"
+                  : "text-foreground hover:text-blue-500"
+              )}
+            >
+              {item.label}
+            </Link>
+          </SheetClose>
+        )}
+      </>
     );
   }
 
-  // Render for desktop view
+  // Render untuk desktop view (tambahkan kode desktop view di sini)
   return (
     <NavigationMenuItem>
       {item.submenu.length > 0 ? (
@@ -463,24 +466,26 @@ function MobileMenu({
         <VisuallyHidden>
           <DialogTitle>Mobile Navigation</DialogTitle>
         </VisuallyHidden>
-        <div className="flex flex-col h-full p-6">
-          <div className="flex justify-between items-center mb-6">
+        <div className="flex flex-col h-full">
+          {/* Header with logo and close button */}
+          <div className="flex items-center justify-between p-4 border-b">
             <div className="flex items-center gap-2">
               <Image
                 src="/bulba.svg"
                 alt="Bulba Logo"
-                width={20}
-                height={20}
+                width={24}
+                height={24}
                 className="flex-shrink-0"
               />
-              <h2 className="text-lg font-bold ">BULBA.CLOUD</h2>
+              <span className="text-lg font-bold">BULBA.CLOUD</span>
             </div>
             <SheetClose className="rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
               <VisuallyHidden>Close menu</VisuallyHidden>
             </SheetClose>
           </div>
 
-          <nav className="flex-1 overflow-y-auto">
+          {/* Navigation content */}
+          <div className="flex-1 overflow-y-auto py-4">
             <Accordion type="single" collapsible className="w-full">
               {menuItems.map((item) => (
                 <MenuItem
@@ -491,9 +496,41 @@ function MobileMenu({
                 />
               ))}
             </Accordion>
-          </nav>
+          </div>
 
-          <div className="mt-6 pt-6 border-t">
+          {/* Footer with social links and contact button */}
+          <div className="p-4 border-t">
+            <div className="flex items-center justify-center gap-6 mb-4">
+              <Link
+                href="https://discord.gg/4Z6JUZv"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="opacity-75 hover:opacity-100 transition-all"
+              >
+                <Image
+                  src="/discord.svg"
+                  alt="Discord Logo"
+                  width={20}
+                  height={20}
+                  className="dark:invert"
+                />
+              </Link>
+              <Link
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="opacity-75 hover:opacity-100 transition-all"
+              >
+                <Image
+                  src="/instagram.svg"
+                  alt="Instagram Logo"
+                  width={20}
+                  height={20}
+                  className="dark:invert"
+                />
+              </Link>
+              <ModeToggle />
+            </div>
             <Button className="w-full" asChild>
               <Link
                 href="https://wa.me/6285157739978?text=Bang%20mau%20order"

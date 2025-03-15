@@ -1,4 +1,3 @@
-
 import { PricingHeader } from "@/app/_components/PricingHeader";
 import ServicesPricingGrid from "@/components/ServicePricingGrid";
 import { minecraftProduct } from "@/data/minecraft-hosting";
@@ -20,9 +19,6 @@ export default function Page() {
           period="/bulan"
           headerBadge="Server Uptime"
           SubHeaderBadge="99.9%"
-          serverName="VikingRealm"
-          serverSpec="32GB"
-          serverUptime="99.8%"
           ctaText="Pilih Paket"
           ctaHref="#minecraft-product"
           imageSrc="/minecraft-cover.png"

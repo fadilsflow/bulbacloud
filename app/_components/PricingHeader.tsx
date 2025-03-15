@@ -13,9 +13,6 @@ interface PricingHeaderProps {
   period: string;
   headerBadge: string;
   SubHeaderBadge: string;
-  serverName: string;
-  serverSpec: string;
-  serverUptime: string;
   ctaText: string;
   ctaHref: string;
   imageSrc: string;
