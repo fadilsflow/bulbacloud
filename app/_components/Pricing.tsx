@@ -61,7 +61,13 @@ export type Product = {
   id: string;
   name: string;
   price: number;
-  [key: string]: any; // Additional properties specific to each service
+  storage?: string;
+  bandwidth?: string;
+  cpu?: string;
+  ram?: string;
+  pages?: number;
+  support?: string;
+  duration?: string;
 };
 
 export const columns: ColumnDef<Product>[] = [
@@ -95,7 +101,7 @@ export const columns: ColumnDef<Product>[] = [
         <Button
           variant="link"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          className="p-0 text-foreground underline"
+          className="p-0 text-foreground "
         >
           Price
           <ArrowUpDown className="ml-2 h-4 w-4" />
@@ -123,7 +129,7 @@ export const columns: ColumnDef<Product>[] = [
         <Button
           variant="link"
           onClick={() => alert(`Ordering ${product.name}`)}
-          className="p-0 underline text-foreground"
+          className="p-0  text-foreground"
         >
           Order Now
         </Button>

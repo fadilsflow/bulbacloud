@@ -8,5 +8,5 @@ export interface ServiceTypes {
   specs: string[];
   featured?: boolean;
   badge?: string;
-  allFeature: string []
+  allFeature?: string []
 }

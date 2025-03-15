@@ -20,7 +20,7 @@ export default function Page() {
           headerBadge="Server Uptime"
           SubHeaderBadge="99.9%"
           ctaText="Pilih Paket"
-          ctaHref="#minecraft-product"
+          ctaHref="#product"
           imageSrc="/minecraft-cover.png"
           imageAlt="Valheim game server illustration"
           className="mb-8"

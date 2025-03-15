@@ -8,7 +8,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 
 const Hero = () => {
   return (
-    <section className="min-h-screen relative  mx-auto px-4 pt-8 sm:pt-12 md:pt-12 text-center">
+    <section id="hero" className="min-h-screen relative  mx-auto px-4 pt-8 sm:pt-12 md:pt-12 text-center">
       {/* Background Grid Pattern */}
 
       <GridPattern

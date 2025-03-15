@@ -84,7 +84,9 @@ export function PricingHeader({
           {/* Tombol CTA */}
           <div>
             <Button asChild className="px-6">
-              <Link href={ctaHref}>{ctaText}</Link>
+              <Link href={ctaHref} replace>
+                {ctaText}
+              </Link>
             </Button>
           </div>
         </div>

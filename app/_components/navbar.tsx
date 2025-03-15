@@ -29,7 +29,6 @@ import {
   Handshake,
   FileText,
   ChevronRight,
-  X,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
@@ -102,8 +101,8 @@ const menuItems: MenuItem[] = [
     submenu: [],
   },
   {
-    label: "Domain",
-    href: "/domain",
+    label: "Domain Murah",
+    href: "/domain-murah",
     submenu: [],
   },
   {

@@ -23,9 +23,9 @@ export default function OurSolutionsGrid() {
         </div>
         <div className="mt-12 text-cneter">
           <Button variant={"link"} asChild>
-            <Link href={"#pricing"}>
+            <Link replace href={"#pricing"}>
               All services <ChevronRight />
-            </Link>   
+            </Link>
           </Button>
         </div>
       </div>
@@ -35,7 +35,7 @@ export default function OurSolutionsGrid() {
 
 interface ServiceCardProps {
   service: {
-    id: string;
+    id: number;
     href: string;
     name: string;
     specs: string[]; // Array of features

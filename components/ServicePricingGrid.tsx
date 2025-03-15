@@ -55,12 +55,9 @@ export default function ServicesPricingGrid({
   };
 
   return (
-    <section className={cn("py-12 bg-background", className)}>
+    <section id="product" className={cn("py-12 bg-background  scroll-mt-20", className)}>
       <div className="container mx-auto px-4">
-        <h2
-          id="minecraft-product"
-          className="text-center mb-10 text-xl font-semibold tracking-tight sm:text-2xl md:text-3xl"
-        >
+        <h2 className="text-center mb-10 text-xl font-semibold tracking-tight sm:text-2xl md:text-3xl">
           {titleServices}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
