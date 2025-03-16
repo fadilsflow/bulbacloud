@@ -71,10 +71,9 @@ function ServiceCard({ service }: ServiceCardProps) {
             Mulai Dari
           </div>
           <div className="text-xl font-bold text-foreground">
-            Rp{service.priceStart.toLocaleString()}*
-            <span className="text-sm font-normal text-muted-foreground">
-              /bln
-            </span>
+            <span className="text-lg font-normal">Rp</span>
+            {service.priceStart.toLocaleString()}
+            <span className="text-sm font-normal text-muted-foreground"></span>
           </div>
         </CardContent>
       </Card>

@@ -1,6 +1,7 @@
 import WebsiteServicesPricingGrid from "@/components/website-services-pricing-grid";
 import { PricingHeaderWebsite } from "../_components/PricingHeaderWebsite";
 import { WebsiteServicesProduct } from "@/data/WebsiteServicesProduct";
+import TechnologiesWeUse from "../_components/stack";
 
 // import ServicesPricingGrid from "@/components/ServicePricingGrid";
 // import { websiteServices } from "@/data/website-services";

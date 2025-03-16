@@ -68,10 +68,11 @@ export default function Services() {
                 variant="outline"
                 className="mb-2 bg-primary/20 text-primary rounded-full w-fit"
               >
-                Hosting
+                Minecraft Hosting
               </Badge>
               <h3 className="text-3xl md:text-4xl font-normal mb-2">
-                Hosting Apapun
+                Hosting Minecraft Server Anda Dengan Dedicated Resources dari
+                Bulba Cloud
               </h3>
               <p className="mb-4 text-muted-foreground">
                 Performa website yang cepat, aman, dan andal untuk
@@ -82,12 +83,12 @@ export default function Services() {
 
           {/* Card 3 - Half width */}
           <Card className="md:col-span-6 bg-primary/10">
-            <Link href="/" className="block p-6 md:p-8">
+            <Link href="/domain-murah" className="block p-6 md:p-8">
               <Badge
                 variant="outline"
                 className="mb-2 bg-primary/20 text-primary rounded-full w-fit"
               >
-                domainkamu.online
+                Domain Murah
               </Badge>
               <h3 className="text-3xl md:text-4xl font-normal mb-2">
                 Temukan Domain Terbaik untuk Bisnis Anda
@@ -107,14 +108,14 @@ export default function Services() {
                   variant="outline"
                   className="mb-2 bg-primary/20 text-primary rounded-full w-fit"
                 >
-                  VPS
+                  VPS Dedicated Indonesia
                 </Badge>
                 <h3 className="text-3xl md:text-4xl font-normal mb-2">
-                  VPS Hosting untuk Anda
+                  VPS Terkuat di Indonesia dengan Harga Terjangkau
                 </h3>
                 <p className="mb-4 text-muted-foreground">
-                  Solusi VPS yang dapat diskalakan dan berperforma tinggi
-                  disesuaikan dengan kebutuhan Anda.
+                  Solusi VPS Dedicated Resources yang dapat diskalakan dan
+                  berperforma tinggi disesuaikan dengan kebutuhan Anda.
                 </p>
                 <Button variant="link" className="p-0 justify-start w-fit">
                   Pelajari Lebih Lanjut &gt;
@@ -123,7 +124,7 @@ export default function Services() {
               <div className="md:w-1/2 relative h-full min-h-64">
                 <Image
                   src="/vps-dedicated-indonesia.svg"
-                  alt="Logo Bulba"
+                  alt="Vps dedicated Indonesia"
                   fill
                   className="object-cover"
                   priority

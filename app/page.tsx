@@ -5,9 +5,9 @@ import { PricingSection } from "./_components/Pricing";
 import ServicesSection from "./_components/Services";
 import Testimoni from "./_components/TestimoniHeader";
 
-// import { WebsiteServicesProduct } from "@/data/WebsiteServicesProduct";
-// import ServicePricingGrid from "@/components/ServicePricingGrid";
-// import { vpsDigitalOceanProducts } from "@/data/vps-dogital-ocean";
+  // import { WebsiteServicesProduct } from "@/data/WebsiteServicesProduct";
+  // import ServicePricingGrid from "@/components/ServicePricingGrid";
+  // import { vpsDigitalOceanProducts } from "@/data/vps-dogital-ocean";
 
 export default function Home() {
   return (

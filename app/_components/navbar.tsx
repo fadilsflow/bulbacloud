@@ -14,18 +14,22 @@ import {
   Menu,
   Users,
   ArrowRight,
-  Star,
-  MessageSquare,
   MessageCircle,
   Gamepad,
-  BookOpen,
   Cloud,
-  InfoIcon,
-  Target,
-  Phone,
   Headphones,
   Handshake,
   ChevronRight,
+  HelpCircle,
+  LifeBuoy,
+  ShieldCheck,
+  ClipboardList,
+  Scale,
+  Newspaper,
+  Building,
+  ImageIcon,
+  UsersRound,
+  Mic,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
@@ -107,94 +111,110 @@ const menuItems: MenuItem[] = [
     href: "/informasi",
     submenu: [
       {
-        label: "Komunitas",
-        href: "/community",
-        icon: <Users className="h-4 w-4" />,
-        description: "Bergabung dengan komunitas dan diskusi online.",
+        label: "Company",
+        href: "/company",
+        icon: <Building className="h-4 w-4" />, // Lebih sesuai untuk perusahaan
+        description: "Informasi tentang perusahaan kami.",
         children: [
           {
-            label: "WhatsApp Group",
-            href: "/whatsapp",
-            icon: <MessageCircle className="h-4 w-4" />,
-            description: "Gabung dengan komunitas di WhatsApp.",
+            label: "About Us",
+            href: "/about-us",
+            icon: <Users className="h-4 w-4" />, // Lebih cocok untuk tim/perusahaan
+            description: "Pelajari tentang misi dan visi kami.",
           },
           {
-            label: "Discord",
-            href: "/discord",
-            icon: <MessageSquare className="h-4 w-4" />,
-            description: "Komunitas untuk diskusi bisnis & teknologi.",
+            label: "Blog",
+            href: "/blog",
+            icon: <Newspaper className="h-4 w-4" />, // Lebih sesuai untuk blog atau berita
+            description: "Artikel terbaru tentang bisnis & teknologi.",
+          },
+          {
+            label: "Media Kit",
+            href: "/media-kit",
+            icon: <ImageIcon className="h-4 w-4" />, // Ikon untuk branding & media
+            description: "Unduh logo dan aset brand kami.",
           },
         ],
       },
       {
-        label: "Sumber Daya",
-        href: "/resources",
-        icon: <BookOpen className="h-4 w-4" />,
-        description: "Baca artikel dan panduan terbaru.",
+        label: "Legal",
+        href: "/legal",
+        icon: <Scale className="h-4 w-4" />, // Lebih sesuai untuk kebijakan hukum
+        description: "Dokumen hukum & kebijakan privasi.",
         children: [
-          // {
-          //   label: "Blog",
-          //   href: "/blog",
-          //   icon: <FileText className="h-4 w-4" />,
-          //   description: "Artikel terbaru tentang bisnis & teknologi.",
-          // },
-          // {
-          //   label: "Guides",
-          //   href: "/guides",
-          //   icon: <HelpCircle className="h-4 w-4" />,
-          //   description: "Panduan lengkap untuk layanan kami.",
-          // },
+          {
+            label: "Terms of Service",
+            href: "/terms-of-service",
+            icon: <ClipboardList className="h-4 w-4" />,
+            description: "Syarat dan ketentuan layanan kami.",
+          },
+          {
+            label: "Privacy Policy",
+            href: "/privacy-policy",
+            icon: <ShieldCheck className="h-4 w-4" />, // Lebih cocok untuk keamanan data
+            description: "Kebijakan kami dalam melindungi data Anda.",
+          },
+        ],
+      },
+      {
+        label: "Support",
+        href: "/support",
+        icon: <LifeBuoy className="h-4 w-4" />, // Ikon lebih sesuai untuk dukungan pelanggan
+        description: "Dapatkan bantuan dan dukungan.",
+        children: [
           {
             label: "FAQ",
             href: "/faq",
-            icon: <InfoIcon className="h-4 w-4" />,
+            icon: <HelpCircle className="h-4 w-4" />,
             description: "Jawaban atas pertanyaan umum.",
           },
-        ],
-      },
-      {
-        label: "Tentang Kami",
-        href: "/about",
-        icon: <Star className="h-4 w-4" />,
-        description: "Kenali lebih jauh tentang startup kami.",
-        children: [
-          {
-            label: "Visi & Misi",
-            href: "/vision-mission",
-            icon: <Target className="h-4 w-4" />,
-            description: "Tujuan dan nilai utama yang kami pegang.",
-          },
-          // {
-          //   label: "Tim Kami",
-          //   href: "/team",
-          //   icon: <Users className="h-4 w-4" />,
-          //   description: "Kenali orang-orang di balik startup kami.",
-          // },
-          // {
-          //   label: "Karir",
-          //   href: "/careers",
-          //   icon: <Briefcase className="h-4 w-4" />,
-          //   description: "Bergabung dengan tim kami dan berkembang bersama.",
-          // },
-        ],
-      },
-      {
-        label: "Kontak",
-        href: "/contact",
-        icon: <Phone className="h-4 w-4" />,
-        description: "Hubungi kami untuk pertanyaan atau kerja sama.",
-        children: [
           {
             label: "Customer Support",
             href: "/contact/support",
             icon: <Headphones className="h-4 w-4" />,
-            description: "Dapatkan bantuan terkait layanan kami.",
+            description: "Hubungi tim dukungan pelanggan kami.",
           },
+        ],
+      },
+      {
+        label: "Community",
+        href: "/community",
+        icon: <UsersRound className="h-4 w-4" />, // Lebih cocok untuk komunitas
+        description: "Terhubung dengan komunitas kami.",
+        children: [
           {
             label: "Kemitraan",
             href: "/contact/partnership",
             icon: <Handshake className="h-4 w-4" />,
             description: "Bekerja sama dengan kami untuk solusi bisnis.",
+          },
+          {
+            label: "Komunitas WhatsApp",
+            href: "/",
+            icon: (
+              <Image
+                src="/whatsapp.svg"
+                alt="Instagram Logo"
+                width={18}
+                height={18}
+                className="dark:invert opacity-75 hover:opacity-100 transition-all duration-300 "
+              />
+            ),
+            description: "Gabung dengan komunitas di WhatsApp.",
+          },
+          {
+            label: "Komunitas Discord",
+            href: "https://discord.gg/kdE5QC4t",
+            icon: (
+              <Image
+                src="/discord.svg"
+                alt="Discord Logo"
+                width={20}
+                height={20}
+                className="dark:invert"
+              />
+            ),
+            description: "Komunitas untuk diskusi bisnis & teknologi.",
           },
         ],
       },
@@ -498,7 +518,7 @@ function MobileMenu({
           <div className="p-4 border-t">
             <div className="flex items-center justify-center gap-6 mb-4">
               <Link
-                href="https://discord.gg/4Z6JUZv"
+                href="https://discord.gg/kdE5QC4t"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="opacity-75 hover:opacity-100 transition-all"
@@ -512,7 +532,7 @@ function MobileMenu({
                 />
               </Link>
               <Link
-                href="https://instagram.com"
+                href={"https://www.instagram.com/bulba.cloud"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="opacity-75 hover:opacity-100 transition-all"
@@ -534,7 +554,13 @@ function MobileMenu({
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2"
               >
-                <MessageCircle className="h-4 w-4" />
+                <Image
+                  src="/whatsapp.svg"
+                  alt="Instagram Logo"
+                  width={18}
+                  height={18}
+                  className="dark:invert opacity-75 hover:opacity-100 transition-all duration-300 "
+                />
                 Hubungi via Whatsapp
               </Link>
             </Button>
@@ -598,7 +624,7 @@ export function Navbar() {
 
           <div className="flex items-center gap-4">
             <Link
-              href={"https://discord.gg/4Z6JUZv"}
+              href={"https://discord.gg/kdE5QC4t"}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden md:flex"
@@ -612,7 +638,7 @@ export function Navbar() {
               />
             </Link>
             <Link
-              href={"https://instagram.com"}
+              href={"https://www.instagram.com/bulba.cloud"}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden md:flex"
@@ -626,7 +652,7 @@ export function Navbar() {
               />
             </Link>
             <Link
-              href={"https://instagram.com"}
+              href={"https://www.instagram.com/bulba.cloud"}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden md:flex"
