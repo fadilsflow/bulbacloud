@@ -28,6 +28,40 @@ export { viewport };
 export default function Page() {
   return (
     <main className="bg-background w-full my-auto pt-8 sm:pt-12 md:pt-12">
+      {/* Skrip schema markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: "Solusi Website Profesional",
+            description:
+              "Tingkatkan citra bisnis Anda dengan website profesional. Dibuat oleh developer berpengalaman, desain responsif & modern, gratis domain + server. Harga mulai dari 900 ribuan.",
+            image: "https://bulba.cloud/website.png",
+            sku: "WEB-PROF-ID",
+            mpn: "WEB001",
+            brand: {
+              "@type": "Brand",
+              name: "Nama Perusahaan Anda",
+            },
+            offers: {
+              "@type": "AggregateOffer",
+              url: "https://bulba.cloud/solusi-website-terbaik",
+              priceCurrency: "IDR",
+              lowPrice: "999000",
+              highPrice: "10000000",
+              offerCount: "3",
+              availability: "https://schema.org/InStock",
+            },
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "4.8",
+              reviewCount: "147",
+            },
+          }),
+        }}
+      />
       {/* Container untuk membatasi lebar konten */}
       <div className="mx-auto max-w-screen-xl px-10 sm:px-6 lg:px-36">
         {/* PricingHeader dengan margin bawah */}
@@ -52,11 +86,6 @@ export default function Page() {
           className="mb-8"
         />
 
-        {/* <ServicesPricingGrid
-          services={websiteServices}
-          titleServices="Pilih Paket Layanan Website"
-          className="mt-8"
-        /> */}
         <WebsiteServicesPricingGrid
           titleServices="Pilih Paket Website Terbaik Untuk Bisnis Anda"
           services={WebsiteServicesProduct}

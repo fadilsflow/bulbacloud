@@ -1,4 +1,4 @@
-import { PricingHeader } from "@/app/_components/PricingHeader";
+import { PricingHeader } from "@/app/(main)/_components/PricingHeader";
 import ServicesPricingGrid from "@/components/ServicePricingGrid";
 import { minecraftProduct } from "@/data/minecraft-hosting";
 import MinecraftFaq from "../_components/minecraftFaq";
@@ -27,6 +27,39 @@ export { viewport };
 export default function Page() {
   return (
     <main className="bg-background w-full my-auto pt-8 sm:pt-12 md:pt-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: "Hosting Minecraft Server Terbaik",
+            description:
+              "Nikmati pengalaman bermain Minecraft yang lancar dengan hosting server khusus. Unlimited player slots, dedicated resources, dan NVMe SSD storage. Uptime 99.9% dan dukungan 24/7.",
+            image: "https://bulba.cloud/minecraft-cover.png",
+            sku: "MC-HOSTING-ID",
+            mpn: "MC001",
+            brand: {
+              "@type": "Brand",
+              name: "Nama Perusahaan Anda",
+            },
+            offers: {
+              "@type": "AggregateOffer",
+              url: "https://bulba.cloud/hosting-minecraft",
+              priceCurrency: "IDR",
+              lowPrice: "40000",
+              highPrice: "580000",
+              offerCount: "6",
+              availability: "https://schema.org/InStock",
+            },
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "4.9",
+              reviewCount: "200",
+            },
+          }),
+        }}
+      />
       {/* Container untuk membatasi lebar konten */}
       <div className="mx-auto max-w-screen-xl  px-10 sm:px-6 lg:px-36">
         {/* PricingHeader dengan margin bawah */}

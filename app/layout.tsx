@@ -1,9 +1,8 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "./_components/navbar";
+
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
-import { Footer } from "./_components/Footer";
 
 import type { Metadata, Viewport } from "next";
 import { WEBSITE_URL } from "@/data/data";
@@ -161,13 +160,11 @@ export default function RootLayout({
       <body className={`${poppins.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
           <main>{children}</main>
-          <Footer />
           <Toaster />
         </ThemeProvider>
       </body>

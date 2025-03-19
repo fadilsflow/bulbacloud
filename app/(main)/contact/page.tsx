@@ -57,7 +57,7 @@ export default function Contact() {
                   <div className="space-y-2">
                     <h3 className="font-normal">Email</h3>
                     <p className="text-muted-foreground">
-                      support@bulbacloud.com
+                      service.bulbacloud@gmail.com
                     </p>
                   </div>
                   <Button variant="outline" className="w-full" asChild>

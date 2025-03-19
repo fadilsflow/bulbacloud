@@ -1,4 +1,4 @@
-import { PricingHeader } from "@/app/_components/PricingHeader";
+import { PricingHeader } from "@/app/(main)/_components/PricingHeader";
 import ServicesPricingGrid from "@/components/ServicePricingGrid";
 import { vpsDedicatedIndonesia } from "@/data/vps-dedicated-indonesia";
 import VpsFaq from "../_components/vpsFaq";
