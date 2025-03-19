@@ -26,6 +26,7 @@ const footerNavItems = [
     items: [
       { title: "FAQ", href: "/faq" },
       { title: "Kontak", href: "/contact" },
+      { title: "Link", href: "/link" },
     ],
   },
   {
