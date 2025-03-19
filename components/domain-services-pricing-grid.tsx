@@ -99,7 +99,7 @@ export default function DomainPricingGrid({
                 <Button
                   variant={service.featureed ? "default" : "outline"}
                   className="w-full mt-4"
-                  onClick={() => handleOrderClick(service)}
+                  onClick={handleOrderClick(service)}
                 >
                   Pilih Paket
                 </Button>

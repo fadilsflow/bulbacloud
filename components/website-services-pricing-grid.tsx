@@ -118,7 +118,7 @@ export default function WebsiteServicesPricingGrid({
                 <Button
                   variant={service.featured ? "default" : "outline"}
                   className="w-full mt-4"
-                  onClick={() => handleOrderClick(service)}
+                  onClick={handleOrderClick(service)}
                 >
                   Pilih Paket
                 </Button>

@@ -1,15 +1,12 @@
 import { GridPattern } from "@/components/magicui/grid-pattern";
-import { Button } from "@/components/ui/button";
+
 import { cn } from "@/lib/utils";
-import Link from "next/link";
+
 import OurSolutionsGrid from "./OurSolutionsGrid";
 import { Badge } from "@/components/ui/badge";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+
+import ContactDropdownMenu from "./ContactDropdownMenu";
+import PaketDropdownMenu from "./PaketDropdownMenu";
 
 const Hero = () => {
   return (
@@ -30,7 +27,6 @@ const Hero = () => {
         )}
       />
       <div className="flex items-center justify-center">
-       
         <Badge variant="outline" className="mb-4 rounded-full bg-primary/20">
           <Badge variant="default" className="rounded-full mr-2 -ml-2">
             New
@@ -57,43 +53,14 @@ const Hero = () => {
       <div className="mt-6 flex flex-row justify-center gap-3 sm:gap-4">
         {/* Call to Action Buttons */}
         <div className="mt-6 flex flex-row justify-center gap-3 sm:gap-4">
-          <Button
-            variant="default"
-            className="inline-flex shadow-xl items-center gap-2  text-primary-foreground  transition-all duration-300 text-sm sm:text-base"
-            asChild
-          >
-            <Link href="#pricing">Get Started</Link>
-          </Button>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                variant="outline"
-                className="shadow-xl inline-flex items-center gap-2 text-sm hover:border-border/80 hover:bg-background hover:text-foreground sm:text-base"
-              >
-                Consultation
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuItem>
-                <Link
-                  href="https://wa.me/yourwhatsappnumber"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  WhatsApp
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link
-                  href="https://discord.gg/kdE5QC4t"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Discord
-                </Link>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <PaketDropdownMenu
+            triggerLabel="Lihat Paket"
+            triggerVariant="default"
+          />
+          <ContactDropdownMenu
+            triggerLabel="Konsultasi"
+            triggerVariant="outline"
+          />
         </div>
       </div>
       <OurSolutionsGrid />

@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button";
 
 export default function OurSolutionsGrid() {
   return (
-    <section className="py-12 bg-background">
+    <section className="py-12 ">
       <div className="container mx-auto px-4">
         {/* Grid container with horizontal scrolling on mobile */}
         <div className="flex overflow-x-auto scrollbar-hide sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:overflow-visible">
@@ -23,7 +23,7 @@ export default function OurSolutionsGrid() {
         </div>
         <div className="mt-12 text-cneter">
           <Button variant={"link"} asChild>
-            <Link replace href={"#pricing"}>
+            <Link replace href={"/#pricing"}>
               All services <ChevronRight />
             </Link>
           </Button>

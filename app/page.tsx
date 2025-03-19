@@ -1,26 +1,26 @@
-// import WebsiteServicesPricingGrid from "@/components/website-services-pricing-grid";
 import Features from "./_components/Features";
 import Hero from "./_components/Hero";
-import { PricingSection } from "./_components/Pricing";
-import ServicesSection from "./_components/Services";
-import Testimoni from "./_components/TestimoniHeader";
+import MainFaq from "./_components/mainFaq";
 
-  // import { WebsiteServicesProduct } from "@/data/WebsiteServicesProduct";
-  // import ServicePricingGrid from "@/components/ServicePricingGrid";
-  // import { vpsDigitalOceanProducts } from "@/data/vps-dogital-ocean";
+import ServicesSection from "./_components/Services";
+import { createMetadata, viewport } from '@/lib/metadata';
+
+export const metadata = createMetadata({
+  title: 'Bulba Cloud - Layanan Hosting & Domain Terpercaya di Indonesia',
+  description: 'Penyedia layanan hosting terbaik di Indonesia dengan uptime 99.9%, domain murah, VPS performa tinggi, dan solusi website untuk semua kebutuhan bisnis Anda.',
+  path: '/',
+  keywords: ['vps hosting', 'cloud hosting', 'minecraft hosting', 'jasa pembuatan website', 'domain murah', 'vps digital ocean'],
+});
+
+export { viewport };
 
 export default function Home() {
   return (
     <div>
       <Hero />
-      {/* <WebsiteServicesPricingGrid services={WebsiteServicesProduct} /> */}
-      {/* <ServicePricingGrid services={vpsDigitalOceanProducts}/> */}
-      {/* <WhatWeDo/>
-       */}
       <Features />
       <ServicesSection />
-      <PricingSection />
-      <Testimoni />
+      <MainFaq />
     </div>
   );
 }

@@ -1,19 +1,3 @@
-// "use client";
-
-// import { useEffect, useRef } from "react";
-// import { Card, CardContent } from "@/components/ui/card";
-// import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-// import { Twitter, Star } from "lucide-react";
-// import Link from "next/link";
-
-// interface TestimonialProps {
-//   content: string;
-//   author: string;
-//   role: string;
-//   avatarSrc?: string;
-//   rating?: number;
-//   company?: string;
-// }
 
 // const testimonials: TestimonialProps[] = [
 //   {

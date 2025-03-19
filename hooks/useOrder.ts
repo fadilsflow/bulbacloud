@@ -1,4 +1,5 @@
 // hooks/useOrder.ts
+import { DISCORD_LINK, WHATSAPP_LINK } from "@/data/data";
 import { useState } from "react";
 
 export const useOrder = () => {
@@ -12,25 +13,23 @@ export const useOrder = () => {
 
   const orderOptions = [
     {
-      title: "Melalui Form Order",
-      description: "Dengan sistem yang mudah & otomatis",
-      image: "/bulba.svg",
-      action: () => {
-        window.location.href = selectedService?.href
-          ? `${selectedService.href}/form`
-          : "/order/form";
-      },
-    },
-    {
-      title: "Melalui WhatsApp",
+      title: "Melalui Whatsapp",
       description: "Untuk konsultasi & informasi penawaran",
-      image: "/bulba.svg",
+      image: "/whatsapp-payment.svg",
       action: () => {
         const message = `Halo, saya tertarik dengan paket ${selectedService?.name}. Boleh info lebih lanjut?`;
         window.open(
-          `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`,
+          `${WHATSAPP_LINK}?text=${encodeURIComponent(message)}`,
           "_blank"
         );
+      },
+    },
+    {
+      title: "Melalui Discord",
+      description: "Untuk konsultasi & informasi penawaran",
+      image: "/discord-payment.svg",
+      action: () => {
+        window.open(`${DISCORD_LINK}`, "_blank");
       },
     },
   ];

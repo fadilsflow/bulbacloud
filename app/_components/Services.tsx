@@ -45,8 +45,14 @@ export default function Services() {
                   Punya ide luar biasa? Kami siap mewujudkannya menjadi website
                   profesional yang siap digunakan.
                 </p>
-                <Button variant="link" className="p-0 justify-start w-fit">
-                  Jadikan Website Impian Anda Nyata! &gt;
+                <Button
+                  variant="link"
+                  className="p-0 justify-start w-fit"
+                  asChild
+                >
+                  <Link href={"/solusi-website-terbaik"}>
+                    Jadikan Website Impian Anda Nyata!
+                  </Link>
                 </Button>
               </div>
               <div className="md:w-1/2 relative h-full min-h-64">
@@ -63,7 +69,7 @@ export default function Services() {
 
           {/* Card 2 - Half width */}
           <Card className="md:col-span-6 bg-primary/10">
-            <Link href="/" className="block p-6 md:p-8">
+            <Link href="/hosting-minecraft" className="block p-6 md:p-8">
               <Badge
                 variant="outline"
                 className="mb-2 bg-primary/20 text-primary rounded-full w-fit"
@@ -118,7 +124,9 @@ export default function Services() {
                   berperforma tinggi disesuaikan dengan kebutuhan Anda.
                 </p>
                 <Button variant="link" className="p-0 justify-start w-fit">
-                  Pelajari Lebih Lanjut &gt;
+                  <Link href={"/vps-dedicated-indonesia"}>
+                    Beli VPS dedicated indonesia sekarang &gt;
+                  </Link>
                 </Button>
               </div>
               <div className="md:w-1/2 relative h-full min-h-64">
@@ -136,7 +144,7 @@ export default function Services() {
         <div className="flex items-center justify-center gap-2 rounded-lg border bg-card/50 p-4 text-sm mt-5">
           <Cpu className="h-4 w-4 text-primary" />
           <p className="text-muted-foreground">
-            All servers powered by high-performance hardware with NVMe storage
+            Bulba Cloud—VPS terjangkau dan stabil untuk semua kalangan!
           </p>
         </div>
       </div>

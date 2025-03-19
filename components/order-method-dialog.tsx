@@ -23,7 +23,6 @@ interface OrderMethodDialogProps {
   title?: string;
 }
 
-
 export function OrderMethodDialog({
   open,
   onOpenChange,
@@ -32,14 +31,14 @@ export function OrderMethodDialog({
 }: OrderMethodDialogProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-lg p-0 overflow-hidden">
+      <DialogContent className="w-full p-0 overflow-hidden">
         <DialogHeader className="p-4 pb-2">
           <DialogTitle className="text-center text-xl font-bold">
             {title}
           </DialogTitle>
         </DialogHeader>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-4">
+        <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-4 p-4">
           {options.map((option, index) => (
             <Card
               key={index}
@@ -49,7 +48,8 @@ export function OrderMethodDialog({
                 onOpenChange(false);
               }}
             >
-              <div className="relative w-full h-32 overflow-hidden">
+              {/* Adjust image height for mobile */}
+              <div className="relative w-full h-32 sm:aspect-square overflow-hidden">
                 <Image
                   src={option.image || "/placeholder.svg"}
                   alt={option.title}
@@ -65,15 +65,16 @@ export function OrderMethodDialog({
               </CardContent>
             </Card>
           ))}
-        </div>
 
-        {options.length === 2 && (
-          <div className="flex justify-center items-center py-2 pb-4">
-            <div className="text-center px-4 py-1 bg-muted rounded-full text-xs font-medium">
-              ATAU
+          {/* Tambahkan teks "ATAU" di tengah-tengah antara dua kartu */}
+          {options.length === 2 && (
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="text-center px-4 py-1 bg-background border rounded-full text-xs font-medium z-10">
+                ATAU
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </DialogContent>
     </Dialog>
   );

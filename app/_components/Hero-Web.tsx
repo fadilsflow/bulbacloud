@@ -1,10 +1,8 @@
-
 import { GridPattern } from "@/components/magicui/grid-pattern";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
-import TechnologiesWeUse from "./stack";
 
 const HeroWeb = () => {
   return (
@@ -66,9 +64,6 @@ const HeroWeb = () => {
             <ArrowRightIcon className="ml-2 size-4" />
           </Link>
         </Button>
-        <div className="mt-4">
-          <TechnologiesWeUse />
-        </div>
       </div>
     </section>
   );

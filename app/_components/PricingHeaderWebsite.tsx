@@ -81,7 +81,7 @@ export function PricingHeaderWebsite({
               <span className="text-lg text-muted-foreground">Rp</span>
               <span className="text-3xl font-semibold sm:text-4xl md:text-5xl">
                 {price}
-                <span className="text-xl">000</span>
+                <span className="text-xl">.000</span>
               </span>
             </div>
           </div>

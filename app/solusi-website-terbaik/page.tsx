@@ -1,11 +1,30 @@
 import WebsiteServicesPricingGrid from "@/components/website-services-pricing-grid";
 import { PricingHeaderWebsite } from "../_components/PricingHeaderWebsite";
 import { WebsiteServicesProduct } from "@/data/WebsiteServicesProduct";
-import TechnologiesWeUse from "../_components/stack";
+import WebsiteFaq from "../_components/websiteFaq";
 
-// import ServicesPricingGrid from "@/components/ServicePricingGrid";
-// import { websiteServices } from "@/data/website-services";
+import { createMetadata, viewport } from "@/lib/metadata";
 
+export const metadata = createMetadata({
+  title:
+    "Solusi Website Profesional untuk Bisnis Anda - Harga Terjangkau & Desain Modern",
+  description:
+    "Tingkatkan citra bisnis Anda dengan website profesional. Dibuat oleh developer berpengalaman, desain responsif & modern, gratis domain + server. Harga mulai dari 900 ribuan.",
+  path: "/solusi-website-terbaik",
+  ogImage: "/website.png",
+  ogImageAlt: "Solusi Website Profesional untuk Bisnis",
+  keywords: [
+    "Jasa Pembuatan Website",
+    "Website Profesional",
+    "Desain Website Modern",
+    "Website Bisnis",
+    "Harga Website Terjangkau",
+    "Gratis Domain dan Server",
+  ],
+  type: "product",
+});
+
+export { viewport };
 export default function Page() {
   return (
     <main className="bg-background w-full my-auto pt-8 sm:pt-12 md:pt-12">
@@ -42,6 +61,7 @@ export default function Page() {
           titleServices="Pilih Paket Website Terbaik Untuk Bisnis Anda"
           services={WebsiteServicesProduct}
         />
+        <WebsiteFaq />
       </div>
     </main>
   );

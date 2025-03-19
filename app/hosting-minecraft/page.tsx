@@ -1,7 +1,29 @@
 import { PricingHeader } from "@/app/_components/PricingHeader";
 import ServicesPricingGrid from "@/components/ServicePricingGrid";
 import { minecraftProduct } from "@/data/minecraft-hosting";
+import MinecraftFaq from "../_components/minecraftFaq";
+import { createMetadata, viewport } from "@/lib/metadata";
 
+export const metadata = createMetadata({
+  title:
+    "Hosting Minecraft Server Terbaik - Main Makin Seru dengan Performa Tinggi",
+  description:
+    "Nikmati pengalaman bermain Minecraft yang lancar dengan hosting server khusus. Unlimited player slots, dedicated resources, dan NVMe SSD storage. Uptime 99.9% dan dukungan 24/7.",
+  path: "/hosting-minecraft",
+  ogImage: "/minecraft-cover.png",
+  ogImageAlt: "Hosting Minecraft Server Terbaik",
+  keywords: [
+    "Hosting Minecraft",
+    "Minecraft Server",
+    "Server Minecraft Indonesia",
+    "Unlimited Player Slots",
+    "NVMe SSD Storage",
+    "Dedicated Resources",
+  ],
+  type: "product",
+});
+
+export { viewport };
 export default function Page() {
   return (
     <main className="bg-background w-full my-auto pt-8 sm:pt-12 md:pt-12">
@@ -32,6 +54,7 @@ export default function Page() {
           className="mt-8"
         />
       </div>
+      <MinecraftFaq />
     </main>
   );
 }

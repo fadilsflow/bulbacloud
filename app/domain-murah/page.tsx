@@ -1,8 +1,30 @@
 import { PricingHeader } from "@/app/_components/PricingHeader";
 import DomainPricingGrid from "@/components/domain-services-pricing-grid";
 import { DomainProduct } from "@/data/domain";
+import DomainFaq from "../_components/domainFaq";
+import { createMetadata, viewport } from "@/lib/metadata";
 
-export default function Page() {
+export const metadata = createMetadata({
+  title:
+    "Domain Murah dengan Setup Cloudflare - Harga Terjangkau & Performa Tinggi",
+  description:
+    "Dapatkan domain premium dengan harga terjangkau dan integrasi otomatis ke Cloudflare. Siap pakai, aman, dan didukung performa tinggi. Daftar sekarang dan dapatkan 1 akun Google baru gratis!",
+  path: "/domain-murah",
+  ogImage: "/domain.png",
+  ogImageAlt: "Domain Murah dengan Integrasi Cloudflare",
+  keywords: [
+    "Domain Murah",
+    "Domain Premium",
+    "Domain Indonesia",
+    "Setup Cloudflare",
+    "Harga Domain Terjangkau",
+    "Domain Siap Pakai",
+  ],
+  type: "product",
+});
+
+export { viewport };
+export default function DomainMurahPage() {
   return (
     <main className="bg-background w-full my-auto pt-8 sm:pt-12 md:pt-12">
       {/* Container untuk membatasi lebar konten */}
@@ -32,6 +54,7 @@ export default function Page() {
 
 "
         />
+        <DomainFaq />
       </div>
     </main>
   );

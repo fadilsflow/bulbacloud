@@ -14,11 +14,9 @@ import {
   Menu,
   Users,
   ArrowRight,
-  MessageCircle,
   Gamepad,
   Cloud,
   Headphones,
-  Handshake,
   ChevronRight,
   HelpCircle,
   LifeBuoy,
@@ -27,9 +25,7 @@ import {
   Scale,
   Newspaper,
   Building,
-  ImageIcon,
   UsersRound,
-  Mic,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
@@ -52,6 +48,12 @@ import {
 } from "@/components/ui/accordion";
 import { ModeToggle } from "@/components/mode-toggle";
 import { DialogTitle } from "@/components/ui/dialog";
+import {
+  DISCORD_LINK,
+  INSTAGRAM_LINK,
+  WHATSAPP_COMMUNITY_LINK,
+  WHATSAPP_LINK,
+} from "@/data/data";
 
 // Type definitions
 interface SubMenuItem {
@@ -111,13 +113,13 @@ const menuItems: MenuItem[] = [
     href: "/informasi",
     submenu: [
       {
-        label: "Company",
+        label: "Perusahaan",
         href: "/company",
         icon: <Building className="h-4 w-4" />, // Lebih sesuai untuk perusahaan
         description: "Informasi tentang perusahaan kami.",
         children: [
           {
-            label: "About Us",
+            label: "Tentang Kami",
             href: "/about-us",
             icon: <Users className="h-4 w-4" />, // Lebih cocok untuk tim/perusahaan
             description: "Pelajari tentang misi dan visi kami.",
@@ -128,12 +130,6 @@ const menuItems: MenuItem[] = [
             icon: <Newspaper className="h-4 w-4" />, // Lebih sesuai untuk blog atau berita
             description: "Artikel terbaru tentang bisnis & teknologi.",
           },
-          {
-            label: "Media Kit",
-            href: "/media-kit",
-            icon: <ImageIcon className="h-4 w-4" />, // Ikon untuk branding & media
-            description: "Unduh logo dan aset brand kami.",
-          },
         ],
       },
       {
@@ -143,13 +139,13 @@ const menuItems: MenuItem[] = [
         description: "Dokumen hukum & kebijakan privasi.",
         children: [
           {
-            label: "Terms of Service",
+            label: "Syarat dan Ketentuan",
             href: "/terms-of-service",
             icon: <ClipboardList className="h-4 w-4" />,
             description: "Syarat dan ketentuan layanan kami.",
           },
           {
-            label: "Privacy Policy",
+            label: "Kebijakan Privasi",
             href: "/privacy-policy",
             icon: <ShieldCheck className="h-4 w-4" />, // Lebih cocok untuk keamanan data
             description: "Kebijakan kami dalam melindungi data Anda.",
@@ -157,7 +153,7 @@ const menuItems: MenuItem[] = [
         ],
       },
       {
-        label: "Support",
+        label: "Bantuan",
         href: "/support",
         icon: <LifeBuoy className="h-4 w-4" />, // Ikon lebih sesuai untuk dukungan pelanggan
         description: "Dapatkan bantuan dan dukungan.",
@@ -169,8 +165,8 @@ const menuItems: MenuItem[] = [
             description: "Jawaban atas pertanyaan umum.",
           },
           {
-            label: "Customer Support",
-            href: "/contact/support",
+            label: "Kontak",
+            href: "/contact",
             icon: <Headphones className="h-4 w-4" />,
             description: "Hubungi tim dukungan pelanggan kami.",
           },
@@ -183,14 +179,8 @@ const menuItems: MenuItem[] = [
         description: "Terhubung dengan komunitas kami.",
         children: [
           {
-            label: "Kemitraan",
-            href: "/contact/partnership",
-            icon: <Handshake className="h-4 w-4" />,
-            description: "Bekerja sama dengan kami untuk solusi bisnis.",
-          },
-          {
             label: "Komunitas WhatsApp",
-            href: "/",
+            href: `${WHATSAPP_COMMUNITY_LINK}`,
             icon: (
               <Image
                 src="/whatsapp.svg"
@@ -204,7 +194,7 @@ const menuItems: MenuItem[] = [
           },
           {
             label: "Komunitas Discord",
-            href: "https://discord.gg/kdE5QC4t",
+            href: `${DISCORD_LINK}`,
             icon: (
               <Image
                 src="/discord.svg"
@@ -518,28 +508,28 @@ function MobileMenu({
           <div className="p-4 border-t">
             <div className="flex items-center justify-center gap-6 mb-4">
               <Link
-                href="https://discord.gg/kdE5QC4t"
+                href={DISCORD_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="opacity-75 hover:opacity-100 transition-all"
               >
                 <Image
                   src="/discord.svg"
-                  alt="Discord Logo"
+                  alt="Discord"
                   width={20}
                   height={20}
                   className="dark:invert"
                 />
               </Link>
               <Link
-                href={"https://www.instagram.com/bulba.cloud"}
+                href={INSTAGRAM_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="opacity-75 hover:opacity-100 transition-all"
               >
                 <Image
                   src="/instagram.svg"
-                  alt="Instagram Logo"
+                  alt="Instagram"
                   width={20}
                   height={20}
                   className="dark:invert"
@@ -549,14 +539,14 @@ function MobileMenu({
             </div>
             <Button className="w-full" asChild>
               <Link
-                href="https://wa.me/6285157739978?text=Bang%20mau%20order"
+                href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2"
               >
                 <Image
                   src="/whatsapp.svg"
-                  alt="Instagram Logo"
+                  alt="Whatsapp"
                   width={18}
                   height={18}
                   className="dark:invert opacity-75 hover:opacity-100 transition-all duration-300 "
@@ -624,42 +614,42 @@ export function Navbar() {
 
           <div className="flex items-center gap-4">
             <Link
-              href={"https://discord.gg/kdE5QC4t"}
+              href={DISCORD_LINK}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden md:flex"
             >
               <Image
                 src="/discord.svg"
-                alt="Discord Logo"
+                alt="Discord"
                 width={18}
                 height={18}
                 className="dark:invert opacity-75 hover:opacity-100 transition-all duration-300"
               />
             </Link>
             <Link
-              href={"https://www.instagram.com/bulba.cloud"}
+              href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden md:flex"
             >
               <Image
                 src="/whatsapp.svg"
-                alt="Instagram Logo"
+                alt="Whatsapp"
                 width={18}
                 height={18}
                 className="dark:invert opacity-75 hover:opacity-100 transition-all duration-300 "
               />
             </Link>
             <Link
-              href={"https://www.instagram.com/bulba.cloud"}
+              href={INSTAGRAM_LINK}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden md:flex"
             >
               <Image
                 src="/instagram.svg"
-                alt="Instagram Logo"
+                alt="Instagram"
                 width={18}
                 height={18}
                 className="dark:invert opacity-75 hover:opacity-100 transition-all duration-300 "

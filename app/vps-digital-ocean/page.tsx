@@ -1,6 +1,7 @@
 import { PricingHeader } from "@/app/_components/PricingHeader";
 import ServicesPricingGrid from "@/components/ServicePricingGrid";
 import { vpsDigitalOcean } from "@/data/vps-digital-ocean";
+import DigitalOceanFaq from "../_components/digitalOceanFaq";
 
 export default function Page() {
   return (
@@ -32,6 +33,7 @@ export default function Page() {
           className="mt-8"
         />
       </div>
+      <DigitalOceanFaq/>
     </main>
   );
 }
