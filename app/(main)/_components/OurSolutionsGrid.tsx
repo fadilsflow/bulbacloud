@@ -21,13 +21,6 @@ export default function OurSolutionsGrid() {
             <ServiceCard key={service.id} service={service} />
           ))}
         </div>
-        <div className="mt-12 text-cneter">
-          <Button variant={"link"} asChild>
-            <Link replace href={"/#pricing"}>
-              All services <ChevronRight />
-            </Link>
-          </Button>
-        </div>
       </div>
     </section>
   );
