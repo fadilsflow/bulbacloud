@@ -2,6 +2,27 @@ import { PricingHeader } from "@/app/(main)/_components/PricingHeader";
 import ServicesPricingGrid from "@/components/ServicePricingGrid";
 import { vpsDigitalOcean } from "@/data/vps-digital-ocean";
 import DigitalOceanFaq from "../_components/digitalOceanFaq";
+import { createMetadata, viewport } from "@/lib/metadata";
+
+export const metadata = createMetadata({
+  title: "VPS Digital Ocean - Cloud Hosting Handal dengan Performa Terbaik",
+  description:
+    "Layanan VPS Digital Ocean dengan performa tinggi, SSD NVMe, skalabilitas tinggi, dan pusat data global. Cocok untuk aplikasi bisnis dan pengembang yang membutuhkan infrastruktur andal.",
+  path: "/vps-digital-ocean",
+  ogImage: "/vps-digital-ocean.svg",
+  ogImageAlt: "VPS Digital Ocean dengan Performa Tinggi",
+  keywords: [
+    "VPS Digital Ocean",
+    "Cloud VPS",
+    "Scalable Hosting",
+    "Virtual Private Server",
+    "SSD NVMe",
+    "Global Data Centers",
+  ],
+  type: "product",
+});
+
+export { viewport };
 
 export default function Page() {
   return (
