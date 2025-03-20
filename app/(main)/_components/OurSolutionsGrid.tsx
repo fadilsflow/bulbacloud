@@ -7,9 +7,8 @@ import {
 } from "@/components/ui/card";
 import Link from "next/link";
 import { ServicesProducts } from "@/data/services";
-import { Check, ChevronRight } from "lucide-react"; // Asumsi menggunakan lucide-react untuk ikon centang
+import { Check } from "lucide-react"; // Asumsi menggunakan lucide-react untuk ikon centang
 
-import { Button } from "@/components/ui/button";
 
 export default function OurSolutionsGrid() {
   return (
