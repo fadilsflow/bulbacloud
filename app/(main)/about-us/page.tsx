@@ -237,8 +237,8 @@ export default function AboutUs() {
                 Siap Untuk Memulai?
               </h2>
               <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                Dapatkan solusi hosting terbaik untuk kebutuhan Anda. Mulai dari
-                Rp 50.000/bulan.
+                Dapatkan VPS Dedicated Indonesia Terbaik. Mulai dari
+                Rp 185.000/bulan.
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">

@@ -49,7 +49,7 @@ export default function Page() {
             "Scalable Cloud Infrastructure",
             "Global Data Centers",
           ]}
-          price="45.000"
+          price="30.000"
           period="/bulan"
           headerBadge="Performa Unggul"
           SubHeaderBadge="Scalable & Reliable"
