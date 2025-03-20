@@ -86,7 +86,7 @@ export default function WebServicesPricingGrid({
             <Card
               key={service.id}
               className={cn(
-                "h-full flex flex-col relative rounded-tr-3xl rounded-tl-none rounded-br-none rounded-bl-2xl overflow-hidden border-2 transition-all duration-300 ",
+                "h-full flex flex-col  relative rounded-tr-3xl rounded-tl-none rounded-br-none rounded-bl-2xl overflow-hidden border-2 transition-all duration-300 ",
                 service.featured
                   ? "border-primary shadow-lg hover:shadow-xl"
                   : "border-border/40 shadow-md hover:shadow-lg hover:border-primary/50"

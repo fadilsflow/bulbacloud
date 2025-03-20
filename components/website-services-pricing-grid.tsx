@@ -49,7 +49,7 @@ export default function WebsiteServicesPricingGrid({
               key={service.id}
               className={cn(
                 // Hilangkan h-full agar card menyesuaikan tinggi isi kontennya
-                "flex flex-col rounded-lg border shadow-sm transition-all duration-300 hover:shadow-md relative overflow-hidden",
+                "flex flex-col rounded-lg border shadow-sm hover:scale-105  transition-all duration-300 hover:shadow-md relative overflow-hidden",
                 service.featured
                   ? "border-primary bg-primary/10 shadow-lg"
                   : "border-border"

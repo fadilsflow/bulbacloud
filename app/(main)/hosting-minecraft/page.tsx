@@ -41,7 +41,7 @@ export default function Page() {
             mpn: "MC001",
             brand: {
               "@type": "Brand",
-              name: "Nama Perusahaan Anda",
+              name: "Bulba Cloud",
             },
             offers: {
               "@type": "AggregateOffer",

@@ -39,21 +39,21 @@ export default function Page() {
             mpn: "VPS001",
             brand: {
               "@type": "Brand",
-              name: "Nama Perusahaan Anda",
+              name: "Bulba Cloud",
             },
             offers: {
               "@type": "AggregateOffer",
               url: "https://bulba.cloud/vps-dedicated-indonesia",
               priceCurrency: "IDR",
-              lowPrice: "100000",
-              highPrice: "1000000",
+              lowPrice: "185000",
+              highPrice: "595000",
               offerCount: "5",
               availability: "https://schema.org/InStock",
             },
             aggregateRating: {
               "@type": "AggregateRating",
-              ratingValue: "4.8",
-              reviewCount: "147",
+              ratingValue: "4.9",
+              reviewCount: "231",
             },
           }),
         }}
@@ -68,7 +68,7 @@ export default function Page() {
             "NVMe SSD Storage",
             "Prosesor AMD EPYC",
           ]}
-          price="50.000"
+          price="185.000"
           period="/bulan"
           headerBadge="Performa Unggul"
           SubHeaderBadge="Terpercaya & Stabil"

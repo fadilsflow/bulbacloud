@@ -8,7 +8,7 @@ export const ServicesProducts = [
       "Full root access",
       "Prosesor AMD EPYC",
     ],
-    priceStart: 50000,
+    priceStart: 185000,
     href: "/vps-dedicated-indonesia",
     bgColor: "bg-primary/10", // Warna latar belakang
   },

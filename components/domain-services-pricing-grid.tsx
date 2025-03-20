@@ -62,7 +62,7 @@ export default function DomainPricingGrid({
             <Card
               key={service.id}
               className={cn(
-                "flex flex-col rounded-lg border shadow-sm transition-all duration-300 hover:shadow-md relative overflow-hidden",
+                "flex flex-col rounded-lg border shadow-sm hover:scale-105 transition-all duration-300 hover:shadow-md relative overflow-hidden",
                 service.featureed
                   ? "border-primary bg-primary/10 shadow-lg"
                   : "border-border"

@@ -26,6 +26,7 @@ import {
   Newspaper,
   Building,
   UsersRound,
+  Server,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
@@ -79,7 +80,7 @@ const menuItems: MenuItem[] = [
       {
         label: "VPS Hosting Dedicated Indonesia",
         href: "/vps-dedicated-indonesia",
-        icon: <Cloud className="h-4 w-4" />,
+        icon: <Server className="h-4 w-4" />,
         description: "Hosting fleksibel dan scalable berbasis cloud.",
       },
       {

@@ -55,7 +55,10 @@ export default function ServicesPricingGrid({
   };
 
   return (
-    <section id="product" className={cn("py-12 bg-background  scroll-mt-20", className)}>
+    <section
+      id="product"
+      className={cn("py-12 bg-background  scroll-mt-20", className)}
+    >
       <div className="container mx-auto px-4">
         <h2 className="text-center mb-10 text-xl font-semibold tracking-tight sm:text-2xl md:text-3xl">
           {titleServices}
@@ -65,8 +68,10 @@ export default function ServicesPricingGrid({
             <Card
               key={service.id}
               className={cn(
-                "h-full flex flex-col rounded-lg border shadow-sm transition-all duration-300 hover:shadow-md relative overflow-hidden",
-                service.featured ? "border-primary bg-primary/10 shadow-lg" : "border-border"
+                "h-full flex flex-col rounded-lg border shadow-sm hover:scale-105 transition-all duration-300 hover:shadow-md relative overflow-hidden",
+                service.featured
+                  ? "border-primary bg-primary/10 shadow-lg"
+                  : "border-border"
               )}
             >
               {/* Featured Tag - Centered at the top */}

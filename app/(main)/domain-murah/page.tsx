@@ -41,21 +41,21 @@ export default function DomainMurahPage() {
             mpn: "DOMAIN001",
             brand: {
               "@type": "Brand",
-              name: "Nama Perusahaan Anda",
+              name: "Bulba Cloud",
             },
             offers: {
               "@type": "AggregateOffer",
               url: "https://bulba.cloud/domain-murah",
               priceCurrency: "IDR",
               lowPrice: "15000",
-              highPrice: "150000",
+              highPrice: "100000000",
               offerCount: "5",
               availability: "https://schema.org/InStock",
             },
             aggregateRating: {
               "@type": "AggregateRating",
-              ratingValue: "4.7",
-              reviewCount: "120",
+              ratingValue: "4.8",
+              reviewCount: "214",
             },
           }),
         }}
