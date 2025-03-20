@@ -10,7 +10,7 @@ export const metadata = createMetadata({
   description:
     "Baca Kebijakan Privasi Bulba Cloud untuk memahami bagaimana kami mengumpulkan, menggunakan, dan melindungi data pribadi Anda. Keamanan data Anda adalah prioritas kami.",
   path: "/privacy-policy",
-  ogImage: "/privacy-policy.png",
+  ogImage: "/bulba.png",
   ogImageAlt: "Kebijakan Privasi Bulba Cloud",
   keywords: [
     "Kebijakan Privasi",
