@@ -478,7 +478,7 @@ function MobileMenu({
             <div className="flex items-center gap-2">
               <Image
                 src="/bulba.svg"
-                alt="Bulba Logo"
+                alt="Bulba Cloud"
                 width={24}
                 height={24}
                 className="flex-shrink-0"
@@ -592,14 +592,14 @@ export function Navbar() {
           <Link href="/" className="flex-shrink-0 flex items-center gap-2">
             <Image
               src="/bulba.svg"
-              alt="Bulba Logo"
+              alt="Bulba Cloud"
               width={40}
               height={40}
               className="flex-shrink-0"
             />
             <Image
               src="/bulba-text.svg"
-              alt="Bulba Logo"
+              alt="Bulba Cloud"
               width={60}
               height={60}
               className="flex-shrink-0 dark:invert"
