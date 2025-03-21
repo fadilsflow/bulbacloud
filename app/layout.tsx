@@ -3,7 +3,7 @@ import "./globals.css";
 
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
 import { WEBSITE_URL } from "@/data/data";
 import Script from "next/script";
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     telephone: false,
   },
   icons: {
-    icon: "/bulba.svg",
+    icon: "/favicon.svg",
     apple: "/apple-touch-icon.png",
   },
 
@@ -164,7 +164,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main>{children}
+          <main>
+            {children}
             <Analytics />
           </main>
           <Toaster />
